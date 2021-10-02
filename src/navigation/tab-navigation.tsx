@@ -7,26 +7,27 @@ import Home from 'src/screens/home';
 import Experience from 'src/screens/experience';
 import Contact from 'src/screens/contact';
 import Settings from 'src/screens/settings';
-import Colors from 'src/assets/colors';
+import { useTheme } from 'react-native-paper';
 
 const Tab = createMaterialBottomTabNavigator();
 
 const BottomTabs = () => {
+  const theme = useTheme();
+  const getColor = (isFocus: boolean) => (isFocus ? theme.colors.surface : theme.colors.disabled);
+
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={theme}>
       <Tab.Navigator
-        activeColor={Colors.white}
-        inactiveColor={Colors.disable}
-        barStyle={{ backgroundColor: Colors.mainLight }}
+      // activeColor={Colors.white}
+      // inactiveColor={Colors.disable}
+      // barStyle={{ backgroundColor: Colors.mainLight }}
       >
         <Tab.Screen
           name="Home"
           component={Home}
           options={{
             tabBarLabel: 'Home',
-            tabBarIcon: ({ focused }) => (
-              <Ionicons name="home" color={focused ? Colors.white : Colors.disable} size={26} />
-            ),
+            tabBarIcon: ({ focused }) => <Ionicons name="home" color={getColor(focused)} size={26} />,
           }}
         />
         <Tab.Screen
@@ -34,9 +35,8 @@ const BottomTabs = () => {
           component={Experience}
           options={{
             tabBarLabel: 'Experience',
-            tabBarIcon: ({ focused }) => (
-              <Ionicons name="school" color={focused ? Colors.white : Colors.disable} size={26} />
-            ),
+
+            tabBarIcon: ({ focused }) => <Ionicons name="school" color={getColor(focused)} size={26} />,
           }}
         />
         <Tab.Screen
@@ -44,9 +44,7 @@ const BottomTabs = () => {
           component={Contact}
           options={{
             tabBarLabel: 'Contact',
-            tabBarIcon: ({ focused }) => (
-              <Ionicons name="mail" color={focused ? Colors.white : Colors.disable} size={26} />
-            ),
+            tabBarIcon: ({ focused }) => <Ionicons name="mail" color={getColor(focused)} size={26} />,
           }}
         />
         <Tab.Screen
@@ -54,9 +52,7 @@ const BottomTabs = () => {
           component={Settings}
           options={{
             tabBarLabel: 'Settings',
-            tabBarIcon: ({ focused }) => (
-              <Ionicons name="settings-sharp" color={focused ? Colors.white : Colors.disable} size={26} />
-            ),
+            tabBarIcon: ({ focused }) => <Ionicons name="settings-sharp" color={getColor(focused)} size={26} />,
           }}
         />
       </Tab.Navigator>
