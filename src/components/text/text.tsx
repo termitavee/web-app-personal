@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
 });
 
 interface ICardProps extends TextProps {
-  children: string;
+  children: string | JSX.Element | (string | JSX.Element)[];
 }
 
 const Text = ({ style, children, ...props }: ICardProps) => {

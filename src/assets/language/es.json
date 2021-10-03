@@ -1,0 +1,23 @@
+{
+  "home": {
+    "title": "inicio",
+    "description": "Soy un desarrollador centrado en aplicaciones para móviles, apasionado de la tecnología y el código limpio. Me encanta aprender y seguir formandome y mejorando tanto personal como profesionalmente."
+  },
+  "experiencia": {
+    "title": "Experiencia"
+  },
+  "contact": {
+    "title": "Contacto"
+  },
+  "settings": {
+    "title": "Ajustes",
+
+    "language": "Idioma",
+    "spanish": "Español",
+    "english": "Inglés",
+    "darkTheme": "Tema oscuro",
+    "interestLinks": "Enlaces de interes",
+    "linkToWeb": "Enlace a la <1>versión Web</1>",
+    "linkToApp": "Enlace a la <1>App</1>"
+  }
+}

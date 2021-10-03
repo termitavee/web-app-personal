@@ -1,4 +1,4 @@
-import { Platform } from 'react-native';
+import { Platform, Linking } from 'react-native';
 
 const isWeb = Platform.OS === 'web';
 const isAndroid = Platform.OS === 'android';
@@ -8,6 +8,10 @@ const isWindows = Platform.OS === 'windows';
 
 const isMobile = isAndroid || isIos;
 
+const canOpenURL = (url: string) => Linking.canOpenURL(url);
+
+const openUrl = (url: string) => canOpenURL(url).then(() => Linking.openURL(url));
+
 export const DeviceUtils = {
   isWeb,
   isAndroid,
@@ -15,4 +19,6 @@ export const DeviceUtils = {
   isMacos,
   isWindows,
   isMobile,
+  canOpenURL,
+  openUrl,
 };

@@ -1,0 +1,23 @@
+{
+  "home": {
+    "title": "Home",
+    "description": "I'm a mainly mobile developer, enthusiastic about technology and clean code. I love learning and keep improving personally and as a professional."
+  },
+  "experience": {
+    "title": "Experiencia"
+  },
+  "contact": {
+    "title": "contact"
+  },
+  "settings": {
+    "title": "settings",
+
+    "language": "Language",
+    "spanish": "Spanish",
+    "english": "English",
+    "darkTheme": "Dark Theme",
+    "interestLinks": "links of Interest",
+    "linkToWeb": "Link to the <1>Web version</1>",
+    "linkToApp": "Link to the <1>App</1>"
+  }
+}
