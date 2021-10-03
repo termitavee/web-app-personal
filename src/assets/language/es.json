@@ -1,7 +1,10 @@
 {
   "home": {
     "title": "inicio",
-    "description": "Soy un desarrollador centrado en aplicaciones para móviles, apasionado de la tecnología y el código limpio. Me encanta aprender y seguir formandome y mejorando tanto personal como profesionalmente."
+    "description": "Soy un desarrollador centrado en aplicaciones para móviles, apasionado de la tecnología y el código limpio. Me encanta aprender y seguir formandome y mejorando tanto personal como profesionalmente.",
+    "goToExp": "Mas detalles de mi conocimiento <1>En la segunda pestaña</1>",
+    "goToContact": "Si quieres contactarme <1>En la tercera pestaña puedes ver algunas formas</1>",
+    "goToSetings": "Si quieres personalizar esto <1>En la última pestaña puedes verlo</1>"
   },
   "experiencia": {
     "title": "Experiencia"

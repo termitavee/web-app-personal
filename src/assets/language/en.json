@@ -1,7 +1,10 @@
 {
   "home": {
     "title": "Home",
-    "description": "I'm a mainly mobile developer, enthusiastic about technology and clean code. I love learning and keep improving personally and as a professional."
+    "description": "I'm a mainly mobile developer, enthusiastic about technology and clean code. I love learning and keep improving personally and as a professional.",
+    "goToExp": "More details about my knowlege <1> in the second tab</1>",
+    "goToContact": "If you want to contact me <1> in the third tab you can check how</1>",
+    "goToSetings": "If you want to change how to see this <1> in the last tab you can see it</1>"
   },
   "experience": {
     "title": "Experiencia"

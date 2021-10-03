@@ -29,12 +29,9 @@ const Settings = () => {
   const { colors } = useTheme();
   const { t, i18n } = useTranslation('translation');
 
-  const selectSpanish = () => {
-    i18n.changeLanguage('es');
-  };
-  const selectEnglish = () => {
-    i18n.changeLanguage('en');
-  };
+  const selectSpanish = () => i18n.language === 'en' && i18n.changeLanguage('es');
+
+  const selectEnglish = () => i18n.language === 'es' && i18n.changeLanguage('en');
 
   // TODO firebase url
   const onPressWeb = () => DeviceUtils.openUrl('https://expo.dev/accounts/termitavee/projects/portfolio');
