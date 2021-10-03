@@ -5,7 +5,7 @@ export const lightTheme: ReactNativePaper.Theme = {
   ...DefaultTheme,
   dark: false,
   // mode ('adaptive' | 'exact'): color mode for dark theme (See Dark Theme).
-  roundness: 20,
+  roundness: 5,
   colors: {
     ...DefaultTheme.colors,
     primary: '#007aff', //primary color for your app, usually your brand color.
@@ -35,7 +35,7 @@ export const darkTheme: Theme = {
   ...DarkTheme,
   dark: true,
   // mode ('adaptive' | 'exact'): color mode for dark theme (See Dark Theme).
-  roundness: 20,
+  roundness: 5,
   colors: {
     ...DarkTheme.colors,
     // primary: '#007aff', //primary color for your app, usually your brand color.

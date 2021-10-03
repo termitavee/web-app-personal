@@ -1,4 +1,5 @@
 export type themeType = 'light' | 'dark';
+export type languageType = 'es' | 'en';
 
 export interface IContext {
   themeContext: themeType;
