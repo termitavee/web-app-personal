@@ -2,7 +2,6 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Container from 'src/components/container';
 import Text from 'src/components/text/text';
-import { translateKeys } from 'src/utils/translations';
 
 const Home = () => {
   const { t } = useTranslation();
