@@ -24,11 +24,7 @@ export default function App() {
   return (
     <PaperProvider theme={currentTheme}>
       <ContextProvider value={{ themeContext, set: { theme } }}>
-        <View style={styles.container}>
-          {console.log('i18n', TranslationUtils.i18n)}
-
-          {loaded && <Navigation />}
-        </View>
+        <View style={styles.container}>{loaded && <Navigation />}</View>
       </ContextProvider>
     </PaperProvider>
   );

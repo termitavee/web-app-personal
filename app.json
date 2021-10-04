@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "portfolio",
-    "slug": "portfolio",
+    "slug": "jrdominguez",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -27,6 +27,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "Small portfolio to show some of my skills and projects",
+    "githubUrl": "https://github.com/termitavee/web-app-personal"
   }
 }

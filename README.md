@@ -34,3 +34,13 @@ TypeScript is a superset of JavaScript which gives you static types and powerful
 ## 📝 Notes
 
 - [Expo TypeScript guide](https://docs.expo.dev/versions/latest/guides/typescript/)
+
+enlaces:
+
+expo.dev/@/projects/jrdominguez
+
+expo.dev/@termitavee/jrdominguez
+
+github.com/termitavee/web-app-personal
+
+jrdominguez.dev

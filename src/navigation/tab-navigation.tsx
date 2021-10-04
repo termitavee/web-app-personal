@@ -21,10 +21,9 @@ const BottomTabs = () => {
   return (
     <NavigationContainer theme={theme}>
       <Tab.Navigator
-        initialRouteName="Experience"
-        // activeColor={Colors.white}
-        // inactiveColor={Colors.disable}
-        // barStyle={{ backgroundColor: Colors.mainLight }}
+      // activeColor={Colors.white}
+      // inactiveColor={Colors.disable}
+      // barStyle={{ backgroundColor: Colors.mainLight }}
       >
         <Tab.Screen
           name="Home"
