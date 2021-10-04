@@ -6,6 +6,8 @@ import Button from 'src/components/button';
 
 import Card from 'src/components/card';
 import Container from 'src/components/container';
+import Headline from 'src/components/text/headline';
+import Subheading from 'src/components/text/subheading';
 import Text from 'src/components/text/text';
 import Title from 'src/components/text/title';
 import { useDefaultContext } from 'src/hooks/use-context';
@@ -38,9 +40,11 @@ const Settings = () => {
 
   const onPressApp = () => DeviceUtils.openUrl('https://expo.dev/accounts/termitavee/projects/portfolio');
   return (
-    <Container style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <Container>
+      <Title>{t('settings.title')}</Title>
+      <Subheading>{t('settings.description')}</Subheading>
       <Card>
-        <Title>{t('settings.language')}</Title>
+        <Headline>{t('settings.language')}</Headline>
         <View style={styles.row}>
           {/* outlined */}
           <Button
@@ -62,11 +66,11 @@ const Settings = () => {
         </View>
       </Card>
       <Card>
-        <Title>{t('settings.darkTheme')}</Title>
+        <Headline>{t('settings.darkTheme')}</Headline>
         <Switch value={themeContext === 'dark'} onValueChange={isDark => set.theme(isDark ? 'dark' : 'light')} />
       </Card>
       <Card>
-        <Title>{t('settings.interestLinks')}</Title>
+        <Headline>{t('settings.interestLinks')}</Headline>
         {!DeviceUtils.isWeb && (
           <Text>
             <Trans i18nKey="settings.linkToWeb">

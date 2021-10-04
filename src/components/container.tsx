@@ -1,25 +1,27 @@
 import React from 'react';
-import { View, StyleSheet, ViewProps } from 'react-native';
+import { StyleSheet, ViewProps, ScrollView } from 'react-native';
 
 import { childrenType } from 'src/types/components';
 
 const styles = StyleSheet.create({
   card: {
-    padding: 10,
     flex: 1,
+  },
+  scroll: {
+    marginHorizontal: 10,
   },
 });
 
 interface ICardProps extends ViewProps {
-  children: childrenType;
+  children: childrenType | childrenType[];
 }
 
 const Container = ({ style, children, ...props }: ICardProps) => {
   // const { themeContext, set } = useDefaultContext();
   return (
-    <View style={[styles.card, style]} {...props}>
+    <ScrollView style={[styles.scroll]} {...props}>
       {children}
-    </View>
+    </ScrollView>
   );
 };
 

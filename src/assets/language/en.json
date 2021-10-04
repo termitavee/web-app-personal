@@ -7,13 +7,87 @@
     "goToSetings": "If you want to change how to see this <1> in the last tab you can see it</1>"
   },
   "experience": {
-    "title": "Experiencia"
+    "title": "Experience",
+    "description": "Things I've worked on",
+
+    "knowledge": {
+      "title": "knowledge",
+      "fields": [
+        {
+          "title": "JavaScript",
+          "description": "Including React (and React Context), Node, React Native, Redux (and redux saga), graphQL."
+        },
+        {
+          "title": "HTML5 and CSS3",
+          "description": "knowledge about Bootstrap, styled components, Foundation and SASS"
+        },
+        {
+          "title": "Databases",
+          "description": "MySQL, OracleSQL and mongoDB, for mobile apps also worked with RealmDB, WatermelonDB and firebase's realtime database"
+        },
+        {
+          "title": "Git",
+          "description": "sorce control with git, with command line tools and programs like sourcetree and extensions like git graph"
+        },
+        {
+          "title": "Teamwork and communication",
+          "description": "Use of Agile project management (mainly kanban but also Scrum), use of tools like Jira or Trello"
+        },
+        {
+          "title": "Other technologies with minor knowledge",
+          "description": "PHP7, Java, ASP.NET (Use of Umbraco as CMS), Python (Django)."
+        }
+      ]
+    },
+
+    "workExperience": {
+      "title": "Work experience",
+      "fields": [
+        {
+          "title": "React native developer en Aluxion Labs",
+          "subTitle": "March 2018 – present",
+          "description": "- Development and distribution of Android and iOS apps using React Native (even native usage with objectiveC/swift on iOS and Java/kotlin on Android) and expo,\nWorked in multiple apps including fintech (investment and recomendation) and health apps (health insurance and user management in clinics).\nDevelopment of a support app for iWatch in swift.\nUse of continuous integration with App Center.\nConfigure and usage of tecnologies and libraries like Push notifications (with firebase), Google maps, Analytics (Firebase Analytics, previosly Google Analytics).\nworked using scrumm, agile and Kanban methodologies."
+        },
+        {
+          "title": "Fullstack developer at IDITIC Software",
+          "subTitle": "Mar 2017 – Jun 2017",
+          "description": "- Develop a mobile app for storage management with React Native.\n- Working with NextJs as a Backend for React web pages.\n- Partialy-made server for a karaoke-streaming service using Django as the server-side and Amazon Cloudfront for the storage."
+        },
+        {
+          "title": "Fullstack developer at Vizioz",
+          "subTitle": "Mar 2016 – Jun 2016",
+          "description": "- Work in a migration from a Wordpress blog to an Umbraco CMS (an open source ASP .NET CMS) and ensure the correct display of images.\n- Front-end development using SASS as a precompiled CSS and Foundation."
+        }
+      ]
+    },
+    "education": {
+      "title": "Education",
+      "fields": [
+        {
+          "title": "Degree NameDeveloper in Multiplatform Applications",
+          "subTitle": "2016 – 2018",
+          "description": "Knowledge about developing desktop and Android apps using multiple threads, and storing data locally and on line."
+        },
+        {
+          "title": "Degree NameDeveloper in Web Aplications",
+          "subTitle": "2016 – 2018",
+          "description": "IES Francisco Ayala - Specialization in front-end (html5, CSS3 and JavaScript) and back-end (NodeJS and PHP) development. Learn to use SQL-like databases (MySQL/MariadDB and OracleSQL) and NoSQL (MongoDB)."
+        },
+        {
+          "title": "Bachelor of Pharmacy",
+          "subTitle": "2011 – 2014",
+          "description": "Universidad de Granada"
+        }
+      ]
+    }
   },
   "contact": {
-    "title": "contact"
+    "title": "contact",
+    "description": "You can contact me by these ways"
   },
   "settings": {
     "title": "settings",
+    "description": "Anohter language? too much bright? want to know How this is done? The answer below",
 
     "language": "Language",
     "spanish": "Spanish",
@@ -22,5 +96,6 @@
     "interestLinks": "links of Interest",
     "linkToWeb": "Link to the <1>Web version</1>",
     "linkToApp": "Link to the <1>App</1>"
-  }
+  },
+  "addToClipboard": "Press to copy"
 }

@@ -7,7 +7,6 @@ import { childrenType } from 'src/types/components';
 const styles = StyleSheet.create({
   card: {
     padding: 10,
-    width: '100%',
     margin: 10,
   },
 });

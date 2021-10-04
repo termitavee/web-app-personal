@@ -1,19 +1,93 @@
 {
   "home": {
-    "title": "inicio",
+    "title": "Inicio",
     "description": "Soy un desarrollador centrado en aplicaciones para móviles, apasionado de la tecnología y el código limpio. Me encanta aprender y seguir formandome y mejorando tanto personal como profesionalmente.",
-    "goToExp": "Mas detalles de mi conocimiento <1>En la segunda pestaña</1>",
-    "goToContact": "Si quieres contactarme <1>En la tercera pestaña puedes ver algunas formas</1>",
-    "goToSetings": "Si quieres personalizar esto <1>En la última pestaña puedes verlo</1>"
+    "goToExp": "Mas detalles de mi conocimiento <1>en la segunda pestaña</1>",
+    "goToContact": "Si quieres contactarme <1>en la tercera pestaña puedes ver algunas formas</1>",
+    "goToSetings": "Si quieres personalizar esto <1>en la última pestaña puedes verlo</1>"
   },
-  "experiencia": {
-    "title": "Experiencia"
+  "experience": {
+    "title": "Experiencia",
+    "description": "Cosas en las que he trabajado o he estudiado.",
+
+    "knowledge": {
+      "title": "Conocimientos",
+      "fields": [
+        {
+          "title": "JavaScript",
+          "description": " Incluyendo React (y React Context), Node, React Native, Redux (redux thunk y redux saga), graphQL."
+        },
+        {
+          "title": "HTML5 and CSS3",
+          "description": "conocimiento de Bootstrap, styled components, Foundation y SASS"
+        },
+        {
+          "title": "Base de datos",
+          "description": "MySQL, OracleSQL and mongoDB, for mobile apps also worked with RealmDB, WatermelonDB and firebase's realtime database"
+        },
+        {
+          "title": "Git",
+          "description": "sorce control with git, with command line tools and programs like sourcetree and extensions like git graph"
+        },
+        {
+          "title": "Trabajo en equipo y comunicación",
+          "description": "Uso de tecnologías Agile (principalmente kanban pero también Scrum). Uso de herramientas como Jira o Trello"
+        },
+        {
+          "title": "Otras tecnologías con conocimiento menor",
+          "description": "PHP7, Java, ASP.NET (Umbraco como CMS), Python (Django)."
+        }
+      ]
+    },
+
+    "workExperience": {
+      "title": "Experiencia laboral",
+      "fields": [
+        {
+          "title": "Desarrollador React native en Aluxion Labs",
+          "subTitle": "Marzo 2018 – present",
+          "description": "- Desarrollo y distribución de aplicaciones para Android e iOS usando React Native (incluyendo el uso de código nativo con ObjectiveC/SWIFT en iOS y Java/Kotlin en Android) y Expo,\nTrabajo en múltiples aplicaciones, incluidas las aplicaciones de Fintech (inversiones y recomendaciones) y salud (seguros de salud, administración de usuarios de centros de salud).\nDesarrollo de una aplicación de apoyo para iWatch en Swift.\nUso de integración continua con App Center.\nConfiguración y uso de tecnologías y librerías como notificaciones push (con Firsebase), Google Maps, Analytics (Firebase Analytics, Previosly Google Analytics).\nEl trabajo usando metodologías Agile, como Scrumm y Kanban."
+        },
+        {
+          "title": "Desarrollador Fullstack en IDITIC Software",
+          "subTitle": "Marzo 2017 – Junio 2017",
+          "description": "- Desarrollado una aplicación móvil para la gestión de almacenamiento con React Native.\n- Trabajado con con NEXTJS como backend para páginas web hechas con React.\n- Parcialmente realizado servidor para un servicio de streming de karaoke usando Django como back-end y Amazon Cloudfront para el almacenamiento."
+        },
+        {
+          "title": "Desarrollador Fullstack en Vizioz",
+          "subTitle": "Marzo 2016 – Junio  2016",
+          "description": "- Trabajado en la migración de un blog de WordPress a un Umbraco CMS (un CMS open source de ASP.NET) y asegúrese de la visualización correcta de las imágenes.\n- Desarrollo de frontEnd utilizando SASS como CSS precompilado y Foundation."
+        }
+      ]
+    },
+    "education": {
+      "title": "Estudios",
+      "fields": [
+        {
+          "title": "Degree NameDeveloper in Multiplatform Applications",
+          "subTitle": "2016 – 2018",
+          "description": "IES Fernando Aguilar quignon - Conocimiento sobre el desarrollo de programas de escritorios y aplicaciones para android usando hilos y procesos y manejando datos de forma local y en linea."
+        },
+        {
+          "title": "Degree NameDeveloper in Web Aplications",
+          "subTitle": "2016 – 2018",
+          "description": "IES Francisco Ayala - Especialización en desarrollo front-end (html5, CSS3 y Javascript) además de desarrollo back-end (NodeJS y PHP). Aprendido a usar bases de datos SQL (MySQL/MariadDB y OracleSQL) y NoSQL (MongoDB)."
+        },
+        {
+          "title": "Bachelor of Pharmacy",
+          "subTitle": "2011 – 2014",
+          "description": "Universidad de Granada"
+        }
+      ]
+    }
   },
   "contact": {
-    "title": "Contacto"
+    "title": "Contacto",
+    "description": "Puedes encontrarme de estas formas:"
   },
   "settings": {
     "title": "Ajustes",
+    "description": "¿Otro idioma? ¿demasiado claro? ¿Tienes curiosidad como lo he hecho? Las respuestas aquí abajo:",
 
     "language": "Idioma",
     "spanish": "Español",
@@ -22,5 +96,6 @@
     "interestLinks": "Enlaces de interes",
     "linkToWeb": "Enlace a la <1>versión Web</1>",
     "linkToApp": "Enlace a la <1>App</1>"
-  }
+  },
+  "addToClipboard": "Pulsa para copiar"
 }

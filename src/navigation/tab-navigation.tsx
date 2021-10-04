@@ -8,25 +8,29 @@ import Experience from 'src/screens/experience';
 import Contact from 'src/screens/contact';
 import Settings from 'src/screens/settings';
 import { useTheme } from 'react-native-paper';
+import { useTranslation } from 'react-i18next';
 
 const Tab = createMaterialBottomTabNavigator();
 
 const BottomTabs = () => {
   const theme = useTheme();
+  const { t } = useTranslation();
+
   const getColor = (isFocus: boolean) => (isFocus ? theme.colors.surface : theme.colors.disabled);
 
   return (
     <NavigationContainer theme={theme}>
       <Tab.Navigator
-      // activeColor={Colors.white}
-      // inactiveColor={Colors.disable}
-      // barStyle={{ backgroundColor: Colors.mainLight }}
+        initialRouteName="Experience"
+        // activeColor={Colors.white}
+        // inactiveColor={Colors.disable}
+        // barStyle={{ backgroundColor: Colors.mainLight }}
       >
         <Tab.Screen
           name="Home"
           component={Home}
           options={{
-            tabBarLabel: 'Home',
+            tabBarLabel: t('home.title'),
             tabBarIcon: ({ focused }) => <Ionicons name="home" color={getColor(focused)} size={26} />,
           }}
         />
@@ -34,7 +38,7 @@ const BottomTabs = () => {
           name="Experience"
           component={Experience}
           options={{
-            tabBarLabel: 'Experience',
+            tabBarLabel: t('experience.title'),
 
             tabBarIcon: ({ focused }) => <Ionicons name="school" color={getColor(focused)} size={26} />,
           }}
@@ -43,7 +47,7 @@ const BottomTabs = () => {
           name="Contact"
           component={Contact}
           options={{
-            tabBarLabel: 'Contact',
+            tabBarLabel: t('contact.title'),
             tabBarIcon: ({ focused }) => <Ionicons name="mail" color={getColor(focused)} size={26} />,
           }}
         />
@@ -51,7 +55,7 @@ const BottomTabs = () => {
           name="Settings"
           component={Settings}
           options={{
-            tabBarLabel: 'Settings',
+            tabBarLabel: t('settings.title'),
             tabBarIcon: ({ focused }) => <Ionicons name="settings-sharp" color={getColor(focused)} size={26} />,
           }}
         />

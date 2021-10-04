@@ -15,9 +15,10 @@ const init = () => {
       // init i18next
       // for all options read: https://www.i18next.com/overview/configuration-options
       .init({
-        fallbackLng: 'en',
+        fallbackLng: __DEV__ ? 'es' : 'en',
         resources,
         defaultNS: 'translation',
+        returnObjects: true,
         debug: __DEV__,
         interpolation: {
           escapeValue: false, // not needed for react as it escapes by default
