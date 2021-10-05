@@ -3,7 +3,6 @@ import { Trans, useTranslation } from 'react-i18next';
 import { useTheme } from 'react-native-paper';
 
 import Container from 'src/components/container';
-import Subheading from 'src/components/text/subheading';
 import Text from 'src/components/text/text';
 import Title from 'src/components/text/title';
 
@@ -15,8 +14,7 @@ const Home = ({ navigation }) => {
   };
   return (
     <Container>
-      <Title>{t('home.title')}</Title>
-      <Subheading>{t('home.description')}</Subheading>
+      <Title>{t('home.description')}</Title>
       <Text>
         <Trans i18nKey="home.goToExp">
           go to tab

@@ -82,11 +82,11 @@
     }
   },
   "contact": {
-    "title": "contact",
+    "title": "Contact",
     "description": "You can contact me by these ways"
   },
   "settings": {
-    "title": "settings",
+    "title": "Settings",
     "description": "Anohter language? too much bright? want to know How this is done? The answer below",
 
     "language": "Language",

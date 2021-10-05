@@ -7,7 +7,6 @@ import Button from 'src/components/button';
 import Card from 'src/components/card';
 import Container from 'src/components/container';
 import Headline from 'src/components/text/headline';
-import Subheading from 'src/components/text/subheading';
 import Text from 'src/components/text/text';
 import Title from 'src/components/text/title';
 import { useDefaultContext } from 'src/hooks/use-context';
@@ -19,11 +18,8 @@ const styles = StyleSheet.create({
   },
   button: {
     flex: 1,
-    // width: '43%',
   },
-  buttonText: {
-    // fontSize: 10,
-  },
+  buttonText: {},
 });
 
 const Settings = () => {
@@ -41,8 +37,7 @@ const Settings = () => {
   const onPressApp = () => DeviceUtils.openUrl('https://expo.dev/accounts/termitavee/projects/portfolio');
   return (
     <Container>
-      <Title>{t('settings.title')}</Title>
-      <Subheading>{t('settings.description')}</Subheading>
+      <Title>{t('settings.description')}</Title>
       <Card>
         <Headline>{t('settings.language')}</Headline>
         <View style={styles.row}>
