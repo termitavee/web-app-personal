@@ -31,8 +31,7 @@ const Settings = () => {
 
   const selectEnglish = () => i18n.language === 'es' && i18n.changeLanguage('en');
 
-  // TODO firebase url
-  const onPressWeb = () => DeviceUtils.openUrl('https://expo.dev/accounts/termitavee/projects/portfolio');
+  const onPressWeb = () => DeviceUtils.openUrl('https://jrdominguez.dev');
 
   const onPressApp = () => DeviceUtils.openUrl('https://expo.dev/accounts/termitavee/projects/portfolio');
   return (

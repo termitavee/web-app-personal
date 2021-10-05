@@ -44,7 +44,7 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "build:web": "expo build:web",
-    "deploy": "firebase deploy",
+    "deploy": "expo build:web && firebase deploy",
     "eject": "expo eject"
   },
   "husky": {
