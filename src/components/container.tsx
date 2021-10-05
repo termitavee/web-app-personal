@@ -19,7 +19,7 @@ interface ICardProps extends ViewProps {
 const Container = ({ style, children, ...props }: ICardProps) => {
   // const { themeContext, set } = useDefaultContext();
   return (
-    <ScrollView style={[styles.scroll]} {...props}>
+    <ScrollView style={[styles.scroll]} showsVerticalScrollIndicator={false} {...props}>
       {children}
     </ScrollView>
   );
