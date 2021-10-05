@@ -4,6 +4,7 @@ import { Provider as PaperProvider } from 'react-native-paper';
 
 import { darkTheme, lightTheme } from 'src/assets/themes';
 import { ContextProvider } from 'src/hooks/use-context';
+import { initialWindowMetrics, SafeAreaProvider } from 'src/hooks/use-safe-area';
 import Navigation from 'src/navigation/tab-navigation';
 import { themeType } from 'src/types/context';
 import TranslationUtils from 'src/utils/translations';
@@ -24,7 +25,9 @@ export default function App() {
   return (
     <PaperProvider theme={currentTheme}>
       <ContextProvider value={{ themeContext, set: { theme } }}>
-        <View style={styles.container}>{loaded && <Navigation />}</View>
+        <SafeAreaProvider initialMetrics={initialWindowMetrics}>
+          <View style={styles.container}>{loaded && <Navigation />}</View>
+        </SafeAreaProvider>
       </ContextProvider>
     </PaperProvider>
   );

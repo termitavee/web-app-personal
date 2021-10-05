@@ -21,8 +21,7 @@ const Experience = () => {
   const educationList = t('experience.education.fields') as translatedType[];
   return (
     <Container>
-      <Title>{t('experience.title')}</Title>
-      <Subheading>{t('experience.description')}</Subheading>
+      <Title>{t('experience.description')}</Title>
 
       <Headline>{t('experience.knowledge.title')}</Headline>
       {knowledgeList.map(job => (
