@@ -87,13 +87,13 @@
   },
   "settings": {
     "title": "Settings",
-    "description": "Anohter language? too much bright? want to know How this is done? The answer below",
+    "description": "Anohter language? Too much bright? Want to know how this is done? The answer below",
 
     "language": "Language",
     "spanish": "Spanish",
     "english": "English",
     "darkTheme": "Dark Theme",
-    "interestLinks": "links of Interest",
+    "interestLinks": "Links of Interest",
     "linkToWeb": "Link to the <1>Web version</1>",
     "linkToApp": "Link to the <1>App</1>"
   },
