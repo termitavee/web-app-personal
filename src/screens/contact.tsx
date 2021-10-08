@@ -14,20 +14,28 @@ const urlLinkedin = 'linkedin.com/in/jose-dominguez-rincon';
 const urlGithub = 'github.com/termitavee';
 const urlMail = 'jose.ro.dominguez@gmail.com';
 
+const toastConfig = {
+  type: 'normal',
+  placement: 'bottom',
+  duration: 3000,
+  animationType: 'slide-in',
+};
+
 const Contact = () => {
   const { t } = useTranslation();
   const toast = useToast();
 
   const openUrlOrCopy = async (text: string, alt?: string) => {
-    const res = await DeviceUtils.openUrl(text);
-    console.log(res);
+    const canOpen = await DeviceUtils.canOpenURL(text);
+    if (canOpen) await DeviceUtils.openUrl(text);
+    else addToClipboard(alt || text);
   };
 
-  const onPressLinkedin = () => openUrlOrCopy(`https://${urlLinkedin}`);
-  const onPressGithub = () => openUrlOrCopy(`https://${urlGithub}`);
-  const onPressEmail = () => openUrlOrCopy(`mailto:${urlMail}`);
+  const onPressLinkedin = () => openUrlOrCopy(`https://${urlLinkedin}`, urlLinkedin);
+  const onPressGithub = () => openUrlOrCopy(`https://${urlGithub}`, urlGithub);
+  const onPressEmail = () => openUrlOrCopy(`mailto:${urlMail}`, urlMail);
   const addToClipboard = (text: string) => {
-    DeviceUtils.addToClipboard(text).then(() => toast.show(t('addedToClipboard')));
+    DeviceUtils.addToClipboard(text).then(() => toast.show(t('addedToClipboard', toastConfig)));
   };
   return (
     <Container>
