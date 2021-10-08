@@ -97,5 +97,6 @@
     "linkToWeb": "Enlace a la <1>versión Web</1>",
     "linkToApp": "Enlace a la <1>App</1>"
   },
-  "addToClipboard": "Pulsa para copiar"
+  "addToClipboard": "Pulsa para copiar",
+  "addedToClipboard": "Copiado"
 }

@@ -11,8 +11,8 @@ const isMobile = isAndroid || isIos;
 
 const canOpenURL = (url: string) => Linking.canOpenURL(url);
 
-const openUrl = (url: string) => canOpenURL(url).then(() => Linking.openURL(url));
-const addToClipboard = (text: string) => Clipboard.setString(text);
+const openUrl = (url: string) => canOpenURL(url).then(isPossible => isPossible && Linking.openURL(url));
+const addToClipboard = async (text: string) => Clipboard.setString(text);
 
 export const DeviceUtils = {
   isWeb,

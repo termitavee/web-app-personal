@@ -97,5 +97,6 @@
     "linkToWeb": "Link to the <1>Web version</1>",
     "linkToApp": "Link to the <1>App</1>"
   },
-  "addToClipboard": "Press to copy"
+  "addToClipboard": "Press to copy",
+  "addedToClipboard": "Copied"
 }

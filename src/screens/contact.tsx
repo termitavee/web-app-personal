@@ -1,6 +1,7 @@
 import React from 'react';
 import FontAwesome5icons from 'react-native-vector-icons/FontAwesome5';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { useToast } from 'react-native-toast-notifications';
 
 import Container from 'src/components/container';
 import Text from 'src/components/text/text';
@@ -11,16 +12,23 @@ import Title from 'src/components/text/title';
 
 const urlLinkedin = 'linkedin.com/in/jose-dominguez-rincon';
 const urlGithub = 'github.com/termitavee';
-const urlMail = ':jose.ro.dominguez@gmail.com';
+const urlMail = 'jose.ro.dominguez@gmail.com';
 
 const Contact = () => {
   const { t } = useTranslation();
+  const toast = useToast();
 
-  const onPressLinkedin = () => DeviceUtils.openUrl(`https://${urlLinkedin}`);
-  const onPressGithub = () => DeviceUtils.openUrl(`https://${urlGithub}`);
-  const onPressEmail = () => DeviceUtils.openUrl(`mailto:${urlMail}`);
-  const addToClipboard = (text: string) => DeviceUtils.addToClipboard(text);
+  const openUrlOrCopy = async (text: string, alt?: string) => {
+    const res = await DeviceUtils.openUrl(text);
+    console.log(res);
+  };
 
+  const onPressLinkedin = () => openUrlOrCopy(`https://${urlLinkedin}`);
+  const onPressGithub = () => openUrlOrCopy(`https://${urlGithub}`);
+  const onPressEmail = () => openUrlOrCopy(`mailto:${urlMail}`);
+  const addToClipboard = (text: string) => {
+    DeviceUtils.addToClipboard(text).then(() => toast.show(t('addedToClipboard')));
+  };
   return (
     <Container>
       <Title>{t('contact.description')}</Title>
