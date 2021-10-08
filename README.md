@@ -28,3 +28,19 @@ expo.dev/@termitavee/jrdominguez
 github.com/termitavee/web-app-personal
 
 jrdominguez.dev
+
+## TODO
+
+- [ ] Revisar diseño de home quizas [algo asi](https://urano.studio)?
+- [x] Experiencia: mantener orden de tamaño
+- [ ] Experiencia: meter desplegables
+- [ ] Experiencia: Programas y tecnologías en mayúsculas
+- [x] Experiencia: work faltan bullet points (en/es)
+- [ ] Experiencia: Poner proyectos en los que he trabajado
+- [ ] Experiencia: quitar educación?
+- [ ] COntacto, cambiar frase a Please contact me
+- [ ] Contacto: teléfono?
+- [ ] Foto de github?
+- [ ] Contacto: poner enlaces escritos
+- [ ] Ajustes: cambiar paleta de colores
+- [ ] Revisar enlaces (añadir github, y apk y editar enlace expo)

@@ -46,7 +46,7 @@
         {
           "title": "React native developer en Aluxion Labs",
           "subTitle": "March 2018 – present",
-          "description": "- Development and distribution of Android and iOS apps using React Native (even native usage with objectiveC/swift on iOS and Java/kotlin on Android) and expo,\nWorked in multiple apps including fintech (investment and recomendation) and health apps (health insurance and user management in clinics).\nDevelopment of a support app for iWatch in swift.\nUse of continuous integration with App Center.\nConfigure and usage of tecnologies and libraries like Push notifications (with firebase), Google maps, Analytics (Firebase Analytics, previosly Google Analytics).\nworked using scrumm, agile and Kanban methodologies."
+          "description": "- Development and distribution of Android and iOS apps using React Native (even native usage with objectiveC/swift on iOS and Java/kotlin on Android) and expo,\n- Worked in multiple apps including fintech (investment and recomendation) and health apps (health insurance and user management in clinics).\n- Development of a support app for iWatch in swift.\n- Use of continuous integration with App Center.\n- Configure and usage of tecnologies and libraries like Push notifications (with firebase), Google maps, Analytics (Firebase Analytics, previosly Google Analytics).\n- worked using scrumm, agile and Kanban methodologies."
         },
         {
           "title": "Fullstack developer at IDITIC Software",
@@ -97,5 +97,6 @@
     "linkToWeb": "Link to the <1>Web version</1>",
     "linkToApp": "Link to the <1>App</1>"
   },
-  "addToClipboard": "Press to copy"
+  "addToClipboard": "Press to copy",
+  "addedToClipboard": "Copied"
 }

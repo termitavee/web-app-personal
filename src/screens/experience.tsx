@@ -21,9 +21,10 @@ const Experience = () => {
   const educationList = t('experience.education.fields') as translatedType[];
   return (
     <Container>
-      <Title>{t('experience.description')}</Title>
+      <Title>{t('experience.title')}</Title>
+      <Headline>{t('experience.description')}</Headline>
 
-      <Headline>{t('experience.knowledge.title')}</Headline>
+      <Subheading>{t('experience.knowledge.title')}</Subheading>
       {knowledgeList.map(job => (
         <Card key={job.title}>
           <Subheading>{job.title}</Subheading>
@@ -32,7 +33,7 @@ const Experience = () => {
         </Card>
       ))}
 
-      <Headline>{t('experience.workExperience.title')}</Headline>
+      <Subheading>{t('experience.workExperience.title')}</Subheading>
       {workList.map(job => (
         <Card key={job.title}>
           <Subheading>{job.title}</Subheading>
@@ -41,7 +42,7 @@ const Experience = () => {
         </Card>
       ))}
 
-      <Headline>{t('experience.education.title')}</Headline>
+      <Subheading>{t('experience.education.title')}</Subheading>
       {educationList.map(job => (
         <Card key={job.title}>
           <Subheading>{job.title}</Subheading>

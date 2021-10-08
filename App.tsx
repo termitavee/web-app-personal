@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Provider as PaperProvider } from 'react-native-paper';
+import { ToastProvider } from 'react-native-toast-notifications';
 
 import { darkTheme, lightTheme } from 'src/assets/themes';
 import { ContextProvider } from 'src/hooks/use-context';
@@ -26,7 +27,9 @@ export default function App() {
     <PaperProvider theme={currentTheme}>
       <ContextProvider value={{ themeContext, set: { theme } }}>
         <SafeAreaProvider initialMetrics={initialWindowMetrics}>
-          <View style={styles.container}>{loaded && <Navigation />}</View>
+          <ToastProvider>
+            <View style={styles.container}>{loaded && <Navigation />}</View>
+          </ToastProvider>
         </SafeAreaProvider>
       </ContextProvider>
     </PaperProvider>

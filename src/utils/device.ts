@@ -17,7 +17,7 @@ const openUrl = (url: string) => {
     else Linking.openURL(url);
   });
 };
-const addToClipboard = (text: string) => Clipboard.setString(text);
+const addToClipboard = async (text: string) => Clipboard.setString(text);
 
 export const DeviceUtils = {
   isWeb,
