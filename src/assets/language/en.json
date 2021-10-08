@@ -15,19 +15,19 @@
       "fields": [
         {
           "title": "JavaScript",
-          "description": "Including React (and React Context), Node, React Native, Redux (and redux saga), graphQL."
+          "description": "Including React (and React Context), Node, React Native, Redux (and redux saga), GraphQL."
         },
         {
           "title": "HTML5 and CSS3",
-          "description": "knowledge about Bootstrap, styled components, Foundation and SASS"
+          "description": "knowledge about Bootstrap, Styled Components, Foundation and SASS"
         },
         {
           "title": "Databases",
-          "description": "MySQL, OracleSQL and mongoDB, for mobile apps also worked with RealmDB, WatermelonDB and firebase's realtime database"
+          "description": "MySQL, OracleSQL and MongoDB, for mobile apps also worked with RealmDB, WatermelonDB and Firebase's Realtime Database"
         },
         {
           "title": "Git",
-          "description": "sorce control with git, with command line tools and programs like sourcetree and extensions like git graph"
+          "description": "Source control with Git, with command line tools and programs like Sourcetree and extensions like git graph"
         },
         {
           "title": "Teamwork and communication",
@@ -64,12 +64,12 @@
       "title": "Education",
       "fields": [
         {
-          "title": "Degree NameDeveloper in Multiplatform Applications",
+          "title": "Degree Developer in Multiplatform Applications",
           "subTitle": "2016 – 2018",
           "description": "Knowledge about developing desktop and Android apps using multiple threads, and storing data locally and on line."
         },
         {
-          "title": "Degree NameDeveloper in Web Aplications",
+          "title": "Degree Developer in Web Aplications",
           "subTitle": "2016 – 2018",
           "description": "IES Francisco Ayala - Specialization in front-end (html5, CSS3 and JavaScript) and back-end (NodeJS and PHP) development. Learn to use SQL-like databases (MySQL/MariadDB and OracleSQL) and NoSQL (MongoDB)."
         },
@@ -83,7 +83,7 @@
   },
   "contact": {
     "title": "Contact",
-    "description": "You can contact me by these ways"
+    "description": "Please, contact me"
   },
   "settings": {
     "title": "Settings",
@@ -97,6 +97,6 @@
     "linkToWeb": "Link to the <1>Web version</1>",
     "linkToApp": "Link to the <1>App</1>"
   },
-  "addToClipboard": "Press to copy",
+  "addToClipboard": "Press here to copy, in case button doesn't work",
   "addedToClipboard": "Copied"
 }

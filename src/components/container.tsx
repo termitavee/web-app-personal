@@ -45,7 +45,7 @@ const Container = ({
     return t(`${routeNames[index].toLowerCase()}.title`);
   });
   return (
-    <ScrollView style={style} showsVerticalScrollIndicator={false} {...props}>
+    <>
       {!noHeader && (
         <Appbar.Header>
           {leftHeaderContent}
@@ -53,8 +53,10 @@ const Container = ({
           {tightHeaderContent}
         </Appbar.Header>
       )}
-      <View style={[styles.scroll, { paddingTop: noHeader ? paddingTop : 10 }]}>{children}</View>
-    </ScrollView>
+      <ScrollView style={style} showsVerticalScrollIndicator={false} {...props}>
+        <View style={[styles.scroll, { paddingTop: noHeader ? paddingTop : 10 }]}>{children}</View>
+      </ScrollView>
+    </>
   );
 };
 

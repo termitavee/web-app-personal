@@ -1,4 +1,14 @@
 {
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "build:ios": "expo build:android",
+    "build:web": "expo build:web",
+    "deploy": "expo build:web && firebase deploy",
+    "eject": "expo eject"
+  },
   "dependencies": {
     "@react-native-clipboard/clipboard": "^1.8.4",
     "@react-navigation/material-bottom-tabs": "^6.0.7",
@@ -37,16 +47,6 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^7.0.2",
     "typescript": "~4.0.0"
-  },
-  "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web",
-    "build:ios": "expo build:android",
-    "build:web": "expo build:web",
-    "deploy": "expo build:web && firebase deploy",
-    "eject": "expo eject"
   },
   "husky": {
     "hooks": {
