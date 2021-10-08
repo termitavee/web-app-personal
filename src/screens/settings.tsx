@@ -33,7 +33,13 @@ const Settings = () => {
 
   const onPressWeb = () => DeviceUtils.openUrl('https://jrdominguez.dev');
 
-  const onPressApp = () => DeviceUtils.openUrl('https://expo.dev/accounts/termitavee/projects/portfolio');
+  const onPressApp = () =>
+    DeviceUtils.openUrl(
+      `https://firebasestorage.googleapis.com/v0/b/termitavee-personal.appspot.com/o/jrdominguez.apk?alt=media`,
+    );
+
+  const onPressExpo = () => DeviceUtils.openUrl('https://expo.dev/@termitavee/jrdominguez');
+
   return (
     <Container>
       <Title>{t('settings.description')}</Title>
@@ -87,6 +93,15 @@ const Settings = () => {
             </Trans>
           </Text>
         )}
+        <Text>
+          <Trans i18nKey="settings.linkToExpo">
+            Link to the
+            <Text style={{ color: colors.primary }} onPress={onPressExpo}>
+              {' '}
+              expo App
+            </Text>
+          </Trans>
+        </Text>
       </Card>
     </Container>
   );
