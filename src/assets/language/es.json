@@ -96,7 +96,8 @@
     "interestLinks": "Enlaces de interes",
     "linkToWeb": "Enlace a la <1>versión Web</1>",
     "linkToApp": "Enlace a la <1>App</1>",
-    "linkToExpo": "Enlace a la <1>App de expo</1>"
+    "linkToExpo": "Enlace a la <1>App de Expo</1>",
+    "linkToSource": "Enlace al <1>código fuente</1>"
   },
   "addToClipboard": "Pulsa aquí para copiar, en caso de que el botón no funcione",
   "addedToClipboard": "Copiado"

@@ -38,6 +38,8 @@ const Settings = () => {
 
   const onPressExpo = () => DeviceUtils.openUrl('https://expo.dev/@termitavee/jrdominguez');
 
+  const onPressSource = () => DeviceUtils.openUrl('https://github.com/termitavee/web-app-personal');
+
   return (
     <Container>
       <Title>{t('settings.description')}</Title>
@@ -96,7 +98,16 @@ const Settings = () => {
             Link to the
             <Text style={{ color: colors.primary }} onPress={onPressExpo}>
               {' '}
-              expo App
+              Expo App
+            </Text>
+          </Trans>
+        </Text>
+        <Text>
+          <Trans i18nKey="settings.linkToSource">
+            Link to the
+            <Text style={{ color: colors.primary }} onPress={onPressSource}>
+              {' '}
+              Source code
             </Text>
           </Trans>
         </Text>

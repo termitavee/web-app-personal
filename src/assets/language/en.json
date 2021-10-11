@@ -95,7 +95,9 @@
     "darkTheme": "Dark Theme",
     "interestLinks": "Links of Interest",
     "linkToWeb": "Link to the <1>Web version</1>",
-    "linkToApp": "Link to the <1>App</1>"
+    "linkToApp": "Link to the <1>App</1>",
+    "linkToExpo": "Link to the <1>Expo App</1>",
+    "linkToSource": "Link to the <1>source code</1>"
   },
   "addToClipboard": "Press here to copy, in case button doesn't work",
   "addedToClipboard": "Copied"

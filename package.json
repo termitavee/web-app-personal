@@ -4,7 +4,8 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "build:ios": "expo build:android",
+    "build:android": "expo build:android",
+    "build:ios": "expo build:ios",
     "build:web": "expo build:web",
     "deploy": "expo build:web && firebase deploy",
     "lint": "eslint \"src/**/*.ts\" \"src/**/*.tsx\"",
@@ -13,6 +14,7 @@
     "prepare-commit": "yarn format && yarn lint",
     "test-output": "open coverage/lcov-report/index.html",
     "test-and-output": "yarn test && yarn test-output",
+    "deploy:web": "expo build:web && firebase deploy",
     "eject": "expo eject"
   },
   "dependencies": {
