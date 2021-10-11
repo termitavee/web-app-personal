@@ -4,9 +4,10 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "build:ios": "expo build:android",
+    "build:android": "expo build:android",
+    "build:ios": "expo build:ios",
     "build:web": "expo build:web",
-    "deploy": "expo build:web && firebase deploy",
+    "deploy:web": "expo build:web && firebase deploy",
     "eject": "expo eject"
   },
   "dependencies": {
