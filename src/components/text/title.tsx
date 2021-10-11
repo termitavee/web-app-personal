@@ -1,27 +1,10 @@
 import React from 'react';
-import { StyleSheet, TextProps } from 'react-native';
-
+import { TextProps } from 'react-native';
 import { Title as PaperTitle } from 'react-native-paper';
 
-const styles = StyleSheet.create({
-  text: {
-    // padding: 10,
-    // width: '100%',
-    // margin: 10,
-  },
-});
-
-interface ICardProps extends TextProps {
+interface ITitleProps extends TextProps {
   children: string;
 }
 
-const Title = ({ style, children, ...props }: ICardProps) => {
-  // const { themeContext, set } = useDefaultContext();
-  return (
-    <PaperTitle style={[styles.text, style]} {...props}>
-      {children}
-    </PaperTitle>
-  );
-};
-
+const Title = ({ children, ...props }: ITitleProps) => <PaperTitle {...props}>{children}</PaperTitle>;
 export default Title;

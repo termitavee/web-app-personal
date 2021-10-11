@@ -1,15 +1,15 @@
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-
-import Home from 'src/screens/home';
-import Experience from 'src/screens/experience';
-import Contact from 'src/screens/contact';
-import Settings from 'src/screens/settings';
-import { useTheme } from 'react-native-paper';
+import { NavigationContainer } from '@react-navigation/native';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Platform } from 'react-native';
+import { useTheme } from 'react-native-paper';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+
+import Contact from 'src/screens/contact';
+import Experience from 'src/screens/experience';
+import Home from 'src/screens/home';
+import Settings from 'src/screens/settings';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -21,6 +21,7 @@ const BottomTabs = () => {
   const getColor = (isFocus: boolean) => (isFocus ? theme.colors.surface : theme.colors.disabled);
 
   return (
+    // @ts-ignore
     <NavigationContainer theme={theme}>
       <Tab.Navigator
       // activeColor={Colors.white}

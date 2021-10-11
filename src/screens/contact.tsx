@@ -1,15 +1,15 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { StyleSheet } from 'react-native';
+import { useToast } from 'react-native-toast-notifications';
 import FontAwesome5icons from 'react-native-vector-icons/FontAwesome5';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { useToast } from 'react-native-toast-notifications';
 
-import Container from 'src/components/container';
 import Button from 'src/components/button';
-import { useTranslation } from 'react-i18next';
-import { DeviceUtils } from 'src/utils/device';
-import Title from 'src/components/text/title';
+import Container from 'src/components/container';
 import Separator from 'src/components/separator';
-import { StyleSheet } from 'react-native';
+import Title from 'src/components/text/title';
+import { DeviceUtils } from 'src/utils/device';
 
 const urlLinkedin = 'linkedin.com/in/jose-dominguez-rincon';
 const urlGithub = 'github.com/termitavee';
@@ -23,9 +23,7 @@ const toastConfig = {
 };
 
 const styles = StyleSheet.create({
-  separator: {
-    marginVertical: 10,
-  },
+  separator: { marginVertical: 10 },
 });
 
 const Contact = () => {

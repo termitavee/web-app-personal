@@ -1,27 +1,14 @@
 import React from 'react';
-import { StyleSheet, TextProps } from 'react-native';
-
+import { TextProps } from 'react-native';
 import { Subheading as PaperSubheading } from 'react-native-paper';
-
-const styles = StyleSheet.create({
-  text: {
-    // padding: 10,
-    // width: '100%',
-    // margin: 10,
-  },
-});
 
 interface ICardProps extends TextProps {
   children: string;
 }
 
-const Subheading = ({ style, children, ...props }: ICardProps) => {
-  // const { themeContext, set } = useDefaultContext();
-  return (
-    <PaperSubheading style={[styles.text, style]} {...props}>
-      {children}
-    </PaperSubheading>
-  );
-};
-
+const Subheading = ({ style, children, ...props }: ICardProps) => (
+  <PaperSubheading style={style} {...props}>
+    {children}
+  </PaperSubheading>
+);
 export default Subheading;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { List } from 'react-native-paper';
+
 import Card from 'src/components/card';
 import Container from 'src/components/container';
 import Caption from 'src/components/text/caption';

@@ -1,6 +1,8 @@
 import { StatusBar } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
 import { DeviceUtils } from 'src/utils/device';
+
 export { SafeAreaView, SafeAreaProvider, initialWindowMetrics } from 'react-native-safe-area-context';
 
 export const getSafeArea = () => {

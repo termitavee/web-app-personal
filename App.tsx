@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Appearance, ColorSchemeName } from 'react-native';
 import { Provider as PaperProvider } from 'react-native-paper';
 import { ToastProvider } from 'react-native-toast-notifications';
 
@@ -7,15 +7,14 @@ import { darkTheme, lightTheme } from 'src/assets/themes';
 import { ContextProvider } from 'src/hooks/use-context';
 import { initialWindowMetrics, SafeAreaProvider } from 'src/hooks/use-safe-area';
 import Navigation from 'src/navigation/tab-navigation';
-import { themeType } from 'src/types/context';
 import TranslationUtils from 'src/utils/translations';
 
 export default function App() {
-  const [themeContext, setTheme] = useState<themeType>('light');
-  const [currentTheme, setCurrentTheme] = useState(lightTheme);
+  const [themeContext, setTheme] = useState<ColorSchemeName>(Appearance.getColorScheme());
+  const [currentTheme, setCurrentTheme] = useState(Appearance.getColorScheme() === 'dark' ? darkTheme : lightTheme);
   const [loaded, setLoaded] = useState(false);
 
-  const theme = (newTheme: themeType) => {
+  const theme = (newTheme: ColorSchemeName) => {
     setTheme(newTheme);
     setCurrentTheme(newTheme === 'light' ? lightTheme : darkTheme);
   };

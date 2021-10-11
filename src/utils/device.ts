@@ -1,5 +1,5 @@
-import { Platform, Linking } from 'react-native';
 import Clipboard from '@react-native-clipboard/clipboard';
+import { Platform, Linking } from 'react-native';
 
 const isWeb = Platform.OS === 'web';
 const isAndroid = Platform.OS === 'android';
@@ -11,12 +11,11 @@ const isMobile = isAndroid || isIos;
 
 const canOpenURL = (url: string) => Linking.canOpenURL(url);
 
-const openUrl = (url: string) => {
-  return canOpenURL(url).then(() => {
-    if (Platform.OS == 'web') window.open(url, '_blank');
+const openUrl = (url: string) =>
+  canOpenURL(url).then(() => {
+    if (Platform.OS === 'web') window.open(url, '_blank');
     else Linking.openURL(url);
   });
-};
 const addToClipboard = async (text: string) => Clipboard.setString(text);
 
 export const DeviceUtils = {
@@ -30,3 +29,5 @@ export const DeviceUtils = {
   openUrl,
   addToClipboard,
 };
+
+export default DeviceUtils;

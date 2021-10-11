@@ -21,6 +21,8 @@ const styles = StyleSheet.create({
     marginRight: 20,
   },
   separator: { marginVertical: 10 },
+  content: { flex: 1 },
+  footer: { paddingBottom: 10 },
 });
 
 const Home = ({ navigation }) => {
@@ -34,36 +36,41 @@ const Home = ({ navigation }) => {
     <Container>
       <View style={styles.imageCover}>
         <Image style={styles.Image} source={profileImage} />
-        <Title style={mainColorStyle}>Jose Roberto Dominguez</Title>
+        <Title style={mainColorStyle}>Jose Roberto Domínguez</Title>
       </View>
       <Separator style={styles.separator} />
       <Title style={mainColorStyle}>{t('home.description')}</Title>
 
       <Separator style={styles.separator} />
-      <Text>
-        <Trans i18nKey="home.goToExp">
-          go to tab
-          <Text style={mainColorStyle} onPress={() => navigateToTab('Experience')}>
-            experience
-          </Text>
-        </Trans>
-      </Text>
-      <Text>
-        <Trans i18nKey="home.goToContact">
-          go to tab
-          <Text style={mainColorStyle} onPress={() => navigateToTab('Contact')}>
-            contact
-          </Text>
-        </Trans>
-      </Text>
-      <Text>
-        <Trans i18nKey="home.goToSetings">
-          go to tab
-          <Text style={mainColorStyle} onPress={() => navigateToTab('Settings')}>
-            settings
-          </Text>
-        </Trans>
-      </Text>
+      <View style={styles.content} />
+
+      <View style={styles.footer}>
+        <Separator style={styles.separator} />
+        <Text>
+          <Trans i18nKey="home.goToExp">
+            go to tab
+            <Text style={mainColorStyle} onPress={() => navigateToTab('Experience')}>
+              experience
+            </Text>
+          </Trans>
+        </Text>
+        <Text>
+          <Trans i18nKey="home.goToContact">
+            go to tab
+            <Text style={mainColorStyle} onPress={() => navigateToTab('Contact')}>
+              contact
+            </Text>
+          </Trans>
+        </Text>
+        <Text>
+          <Trans i18nKey="home.goToSetings">
+            go to tab
+            <Text style={mainColorStyle} onPress={() => navigateToTab('Settings')}>
+              settings
+            </Text>
+          </Trans>
+        </Text>
+      </View>
     </Container>
   );
 };

@@ -1,22 +1,22 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { useNavigationState } from '@react-navigation/core';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { StyleSheet, ViewProps, ScrollView, View, ViewStyle, StyleProp } from 'react-native';
+import { StyleSheet, ViewProps, ScrollView, ViewStyle, StyleProp } from 'react-native';
 import { Appbar } from 'react-native-paper';
-import { getSafeArea } from 'src/hooks/use-safe-area';
 
+import { getSafeArea } from 'src/hooks/use-safe-area';
 import { childrenType } from 'src/types/components';
 
 const styles = StyleSheet.create({
-  card: {
-    flex: 1,
-  },
-  scroll: {
+  scroll: { flexGrow: 1 },
+  scrollInner: {
     marginHorizontal: 10,
+    flexGrow: 1,
   },
 });
 
-interface ICardProps extends ViewProps {
+interface IContainerProps extends ViewProps {
   children: childrenType | childrenType[];
   noHeader?: boolean;
   leftHeaderContent?: childrenType;
@@ -35,15 +35,13 @@ const Container = ({
   title,
   subtitle,
   ...props
-}: ICardProps) => {
+}: IContainerProps) => {
   // const { themeContext, set } = useDefaultContext();
   const {
     padding: { paddingTop },
   } = getSafeArea();
   const { t } = useTranslation();
-  const defTitle = useNavigationState(({ routeNames, index }) => {
-    return t(`${routeNames[index].toLowerCase()}.title`);
-  });
+  const defTitle = useNavigationState(({ routeNames, index }) => t(`${routeNames[index].toLowerCase()}.title`));
   return (
     <>
       {!noHeader && (
@@ -53,8 +51,13 @@ const Container = ({
           {tightHeaderContent}
         </Appbar.Header>
       )}
-      <ScrollView style={style} showsVerticalScrollIndicator={false} {...props}>
-        <View style={[styles.scroll, { paddingTop: noHeader ? paddingTop : 10 }]}>{children}</View>
+      <ScrollView
+        style={[styles.scroll, style]}
+        contentContainerStyle={[styles.scrollInner, { paddingTop: noHeader ? paddingTop : 10 }]}
+        showsVerticalScrollIndicator={false}
+        {...props}
+      >
+        {children}
       </ScrollView>
     </>
   );

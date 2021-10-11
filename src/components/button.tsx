@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleProp, StyleSheet, TextStyle, ViewStyle } from 'react-native';
 import { Button as PaperButton } from 'react-native-paper';
 import { IconSource } from 'react-native-paper/lib/typescript/components/Icon';
+import { Theme } from 'react-native-paper/lib/typescript/types';
 
 const styles = StyleSheet.create({
   button: {
@@ -26,17 +27,13 @@ interface IButtonProps {
   contentStyle?: StyleProp<ViewStyle>;
   style?: StyleProp<ViewStyle>;
   labelStyle?: StyleProp<TextStyle>;
-  theme?: ReactNativePaper.Theme;
+  theme?: Theme;
   testID?: string;
 }
 
-const Button = ({ style, children, ...props }: IButtonProps) => {
-  // const { themeContext, set } = useDefaultContext();
-  return (
-    <PaperButton style={[styles.button, style]} {...props}>
-      {children}
-    </PaperButton>
-  );
-};
-
+const Button = ({ style, children, ...props }: IButtonProps) => (
+  <PaperButton style={[styles.button, style]} {...props}>
+    {children}
+  </PaperButton>
+);
 export default Button;

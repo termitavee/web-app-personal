@@ -9,19 +9,19 @@
   "extends": [
     "airbnb",
     "eslint:recommended",
+    "plugin:import/typescript",
     "plugin:import/recommended",
     "plugin:react/recommended",
-    "prettier",
-    "prettier/react",
-    "prettier/@typescript-eslint",
-    "plugin:jest/recommended"
+    "plugin:jest/recommended",
+    "prettier"
   ],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly",
     "__DEV__": "readonly",
     "JSX": "readonly",
-    "NodeJS": "readonly"
+    "NodeJS": "readonly",
+    "ReactNativePaper": "readonly"
   },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -57,7 +57,7 @@
         ".svg": "never"
       }
     ],
-    "import/no-extraneous-dependencies": ["error", { "packageDir": "./" }],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true, "packageDir": "./" }],
     "import/order": [
       "error",
       {
@@ -73,6 +73,8 @@
     "@typescript-eslint/no-unused-vars": [2],
     // fix bug
     "no-shadow": "off",
+    "import/no-unresolved": [0],
+
     "@typescript-eslint/no-shadow": [2],
     "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".jsx"] }],
     "react/jsx-props-no-spreading": [0],
@@ -84,7 +86,7 @@
   "settings": {
     "import/resolver": {
       "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx", ".svg", ".native.js", ".ios.js", ".android.js", "d.ts"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx", ".svg", ".jpg", ".native.js", ".ios.js", ".android.js", "d.ts"],
         "paths": ["./"]
       }
     }

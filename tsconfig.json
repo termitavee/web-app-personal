@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
     "jsx": "react-native",
+    "declaration": true,
+    "sourceMap": true,
     "removeComments": true,
     "strict": true,
     "noImplicitAny": false,

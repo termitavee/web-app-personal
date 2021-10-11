@@ -1,4 +1,5 @@
 import { useContext, createContext } from 'react';
+
 import { IContext } from 'src/types/context';
 
 const defaultContext = createContext<IContext>({

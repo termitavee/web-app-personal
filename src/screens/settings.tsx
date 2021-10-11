@@ -2,8 +2,8 @@ import React from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import { View, StyleSheet } from 'react-native';
 import { Switch, useTheme } from 'react-native-paper';
-import Button from 'src/components/button';
 
+import Button from 'src/components/button';
 import Card from 'src/components/card';
 import Container from 'src/components/container';
 import Headline from 'src/components/text/headline';
@@ -16,9 +16,7 @@ const styles = StyleSheet.create({
   row: {
     flexDirection: 'row',
   },
-  button: {
-    flex: 1,
-  },
+  button: { flex: 1 },
   buttonText: {},
 });
 
@@ -27,9 +25,9 @@ const Settings = () => {
   const { colors } = useTheme();
   const { t, i18n } = useTranslation('translation');
 
-  const selectSpanish = () => i18n.language === 'en' && i18n.changeLanguage('es');
-
-  const selectEnglish = () => i18n.language === 'es' && i18n.changeLanguage('en');
+  const toogleLang = lang => {
+    if (i18n.language !== lang) i18n.changeLanguage(lang);
+  };
 
   const onPressWeb = () => DeviceUtils.openUrl('https://jrdominguez.dev');
 
@@ -48,7 +46,7 @@ const Settings = () => {
         <View style={styles.row}>
           {/* outlined */}
           <Button
-            onPress={selectSpanish}
+            onPress={() => toogleLang('es')}
             mode={i18n.language === 'es' ? 'contained' : 'outlined'}
             style={styles.button}
             labelStyle={styles.buttonText}
@@ -56,7 +54,7 @@ const Settings = () => {
             🇪🇸 {t('settings.spanish')}
           </Button>
           <Button
-            onPress={selectEnglish}
+            onPress={() => toogleLang('en')}
             mode={i18n.language === 'en' ? 'contained' : 'outlined'}
             style={styles.button}
             labelStyle={styles.buttonText}

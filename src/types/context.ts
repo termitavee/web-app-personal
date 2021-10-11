@@ -1,9 +1,10 @@
-export type themeType = 'light' | 'dark';
+import { ColorSchemeName } from 'react-native';
+
 export type languageType = 'es' | 'en';
 
 export interface IContext {
-  themeContext: themeType;
+  themeContext: ColorSchemeName;
   set: {
-    theme: (newTheme: themeType) => void;
+    theme: (newTheme: ColorSchemeName) => void;
   };
 }

@@ -1,27 +1,14 @@
 import React from 'react';
-import { StyleSheet, TextProps } from 'react-native';
-
+import { TextProps } from 'react-native';
 import { Caption as PaperCaption } from 'react-native-paper';
-
-const styles = StyleSheet.create({
-  text: {
-    // padding: 10,
-    // width: '100%',
-    // margin: 10,
-  },
-});
 
 interface ICardProps extends TextProps {
   children: string;
 }
 
-const Caption = ({ style, children, ...props }: ICardProps) => {
-  // const { themeContext, set } = useDefaultContext();
-  return (
-    <PaperCaption style={[styles.text, style]} {...props}>
-      {children}
-    </PaperCaption>
-  );
-};
-
+const Caption = ({ style, children, ...props }: ICardProps) => (
+  <PaperCaption style={style} {...props}>
+    {children}
+  </PaperCaption>
+);
 export default Caption;
