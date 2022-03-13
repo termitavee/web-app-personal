@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, ViewStyle, Pressable, PressableProps, StyleProp, TextStyle } from 'react-native';
 
+import Text from './text';
+
 const styles = StyleSheet.create({
   button: {
     padding: 10,
@@ -42,7 +44,7 @@ interface IButtonProps extends PressableProps {
 
 const Button = ({ style, children, mode = 'contained', ...props }: IButtonProps) => (
   <Pressable style={[styles.button, styles[mode], style]} {...props}>
-    {children}
+    <Text>{children}</Text>
   </Pressable>
 );
 export default Button;

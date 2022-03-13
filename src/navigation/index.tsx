@@ -7,7 +7,7 @@ import { ToastProvider } from 'react-native-toast-notifications';
 import { darkTheme, lightTheme } from 'src/assets/themes';
 import { ContextProvider } from 'src/hooks/use-context';
 import { initialWindowMetrics, SafeAreaProvider } from 'src/hooks/use-safe-area';
-import { useIsInit } from 'src/utils/translations';
+import { UseIsInit } from 'src/utils/translations';
 
 import Navigation from './tab-navigation';
 
@@ -26,7 +26,7 @@ const App: React.FC = () => {
     Appearance.getColorScheme() === 'dark' ? darkTheme : lightTheme,
   );
   const [loaded, setLoaded] = React.useState(false);
-  const isI19nInitialized = useIsInit();
+  const isI19nInitialized = UseIsInit();
   const theme = (newTheme: ColorSchemeName) => {
     setTheme(newTheme);
     setCurrentTheme(newTheme === 'light' ? lightTheme : darkTheme);

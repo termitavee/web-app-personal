@@ -46,12 +46,10 @@ const init = () =>
 
 if (!i18n.isInitialized) void init();
 
-export const useIsInit = () => {
-  const {
-    i18n: { isInitialized },
-  } = useTranslation();
+export const UseIsInit = () => {
+  const { i18n: currentI18n } = useTranslation();
 
-  return isInitialized;
+  return currentI18n.isInitialized;
 };
 
 const TranslationUtils = {

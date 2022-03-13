@@ -2,16 +2,28 @@ import { DefaultTheme, DarkTheme as DefaultDarkTheme } from '@react-navigation/n
 import { Breakpoint, createTheme, useTheme as useThemeDef } from '@shopify/restyle';
 import { StyleProp, TextStyle } from 'react-native';
 
-const textVartiants: Record<string, StyleProp<TextStyle>> = {
+const textVariants: Record<string, StyleProp<TextStyle>> = {
   default: {
     color: 'text',
   },
-  caption: {},
-  headline: {},
-  paragraph: {},
-  subheading: {},
-  text: {},
-  title: {},
+  caption: {
+    color: 'text',
+  },
+  headline: {
+    color: 'text',
+  },
+  paragraph: {
+    color: 'text',
+  },
+  subheading: {
+    color: 'text',
+  },
+  text: {
+    color: 'text',
+  },
+  title: {
+    color: 'text',
+  },
 };
 
 const spacing: Record<string, string | number> = {};
@@ -55,7 +67,7 @@ export const lightTheme = createTheme({
   },
   spacing,
   breakpoints,
-  textVartiants,
+  textVariants,
   // size: {
   //   cell: {
   //     minHeight: 40,
@@ -88,6 +100,10 @@ export const lightTheme = createTheme({
 });
 
 export type Theme = typeof lightTheme;
+export type Colors = typeof lightTheme.colors;
+export type Spacing = typeof lightTheme.spacing;
+export type Breakpoints = typeof lightTheme.breakpoints;
+export type TextVariants = typeof lightTheme.textVariants;
 
 export const darkTheme: Theme = {
   ...lightTheme,
