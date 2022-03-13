@@ -1,7 +1,7 @@
+import { useTheme } from '@shopify/restyle';
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { Image, View, StyleSheet } from 'react-native';
-import { useTheme } from 'react-native-paper';
 
 import profileImage from 'src/assets/images/profile.jpg';
 import Container from 'src/components/container';
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
   footer: { paddingBottom: 10 },
 });
 
-const Home = ({ navigation }) => {
+const Home: React.FC<> = ({ navigation }) => {
   const { t } = useTranslation();
   const { colors } = useTheme();
   const navigateToTab = (screen: 'Experience' | 'Contact' | 'Settings') => {

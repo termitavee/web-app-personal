@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, ViewProps } from 'react-native';
-import { Card as PaperCard } from 'react-native-paper';
 
+import View from 'src/components/native/view';
 import { childrenType } from 'src/types/components';
 
 const styles = StyleSheet.create({
@@ -15,9 +15,9 @@ interface ICardProps extends ViewProps {
   children: childrenType;
 }
 
-const Card = ({ style, children, ...props }: ICardProps) => (
-  <PaperCard style={[styles.card, style]} {...props}>
+const Card: React.FC<ICardProps> = ({ style, children, ...props }) => (
+  <View backgroundColor="card" style={[styles.card, style]} {...props}>
     {children}
-  </PaperCard>
+  </View>
 );
 export default Card;

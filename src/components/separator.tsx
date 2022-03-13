@@ -1,7 +1,10 @@
 import React from 'react';
 import { ViewProps } from 'react-native';
-import { Divider } from 'react-native-paper';
 
-const Separator = (props: ViewProps) => <Divider {...props} />;
+import View from './native/view';
+
+const Separator: React.FC<ViewProps> = (props: ViewProps) => (
+  <View height={1} width="100%" backgroundColor="disabled" {...props} />
+);
 
 export default Separator;

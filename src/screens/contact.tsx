@@ -5,8 +5,8 @@ import { useToast } from 'react-native-toast-notifications';
 import FontAwesome5icons from 'react-native-vector-icons/FontAwesome5';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-import Button from 'src/components/button';
 import Container from 'src/components/container';
+import Button from 'src/components/native/button';
 import Separator from 'src/components/separator';
 import Title from 'src/components/text/title';
 import { DeviceUtils } from 'src/utils/device';
