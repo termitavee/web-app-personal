@@ -7,8 +7,9 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import Container from 'src/components/container';
 import Button from 'src/components/native/button';
+import Text from 'src/components/native/text';
 import Separator from 'src/components/separator';
-import Title from 'src/components/text/title';
+import { ContactScreenPropType } from 'src/types/navigation';
 import { DeviceUtils } from 'src/utils/device';
 
 const urlLinkedin = 'linkedin.com/in/jose-dominguez-rincon';
@@ -26,12 +27,12 @@ const styles = StyleSheet.create({
   separator: { marginVertical: 10 },
 });
 
-const Contact = () => {
+const Contact: React.FC<ContactScreenPropType> = () => {
   const { t } = useTranslation();
   const toast = useToast();
 
   const addToClipboard = (text: string) => {
-    DeviceUtils.addToClipboard(text).then(() => {
+    void DeviceUtils.addToClipboard(text).then(() => {
       toast.hideAll();
       toast.show(t('addedToClipboard', toastConfig));
     });
@@ -46,13 +47,13 @@ const Contact = () => {
   const onPressLinkedin = () => openUrlOrCopy(`https://${urlLinkedin}`, urlLinkedin);
   const onPressGithub = () => openUrlOrCopy(`https://${urlGithub}`, urlGithub);
   const onPressEmail = () => {
-    if (DeviceUtils.isMobile) openUrlOrCopy(`mailto:${urlMail}`, urlMail);
+    if (DeviceUtils.isMobile) void openUrlOrCopy(`mailto:${urlMail}`, urlMail);
     else addToClipboard(urlMail);
   };
 
   return (
     <Container>
-      <Title>{t('contact.description')}</Title>
+      <Text variant="title">{t('contact.description')}</Text>
       <Button mode="outlined" onPress={onPressLinkedin}>
         <FontAwesome5icons name="linkedin" size={26} /> Linkedin
       </Button>

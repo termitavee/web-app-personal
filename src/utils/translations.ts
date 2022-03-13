@@ -6,10 +6,13 @@ import { initReactI18next, useTranslation } from 'react-i18next';
 import translationEn from 'src/assets/language/en.json';
 import translationEs from 'src/assets/language/es.json';
 
-const resources = {
+export const resources = {
   es: { translation: translationEs },
   en: { translation: translationEn },
 };
+
+export const defaultNS = 'translation';
+
 const LANG_KEY = 'LANG_KEY';
 
 const init = () =>
@@ -33,7 +36,7 @@ const init = () =>
     .init({
       fallbackLng: __DEV__ ? 'es' : 'en',
       resources,
-      defaultNS: 'translation',
+      defaultNS,
       returnObjects: true,
       debug: __DEV__,
       interpolation: {

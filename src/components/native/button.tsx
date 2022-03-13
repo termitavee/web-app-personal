@@ -6,13 +6,22 @@ const styles = StyleSheet.create({
     padding: 10,
     margin: 10,
   },
+  text: {
+    // TODO
+  },
+  outlined: {
+    // TODO
+  },
+  contained: {
+    // TODO
+  },
 });
 
 interface IButtonProps extends PressableProps {
   style?: StyleProp<ViewStyle>;
-  children: string;
-  labelStyle: StyleProp<TextStyle>;
-  // mode?: 'text' | 'outlined' | 'contained';
+  children: React.ReactNode;
+  labelStyle?: StyleProp<TextStyle>;
+  mode?: 'text' | 'outlined' | 'contained';
   // dark?: boolean;
   // compact?: boolean;
   // color?: string;
@@ -31,8 +40,8 @@ interface IButtonProps extends PressableProps {
   // testID?: string;
 }
 
-const Button = ({ style, children, ...props }: IButtonProps) => (
-  <Pressable style={[styles.button, style]} {...props}>
+const Button = ({ style, children, mode = 'contained', ...props }: IButtonProps) => (
+  <Pressable style={[styles.button, styles[mode], style]} {...props}>
     {children}
   </Pressable>
 );

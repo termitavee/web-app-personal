@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const App = () => {
+const App: React.FC = () => {
   const [themeContext, setTheme] = useState<ColorSchemeName>(Appearance.getColorScheme());
   const [currentTheme, setCurrentTheme] = useState(Appearance.getColorScheme() === 'dark' ? darkTheme : lightTheme);
   const [loaded, setLoaded] = useState(false);

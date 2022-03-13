@@ -2,7 +2,17 @@ import { DefaultTheme, DarkTheme as DefaultDarkTheme } from '@react-navigation/n
 import { Breakpoint, createTheme, useTheme as useThemeDef } from '@shopify/restyle';
 import { StyleProp, TextStyle } from 'react-native';
 
-const textVartiants: Record<string, StyleProp<TextStyle>> = {};
+const textVartiants: Record<string, StyleProp<TextStyle>> = {
+  default: {
+    color: 'text',
+  },
+  caption: {},
+  headline: {},
+  paragraph: {},
+  subheading: {},
+  text: {},
+  title: {},
+};
 
 const spacing: Record<string, string | number> = {};
 
@@ -113,4 +123,4 @@ export const darkTheme: Theme = {
   // },
 };
 
-export const useTheme = <T = Theme>() => useThemeDef<T>();
+export const useTheme = <T = Theme>(): T => useThemeDef<T>();

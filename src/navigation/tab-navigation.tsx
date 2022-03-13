@@ -9,8 +9,9 @@ import Contact from 'src/screens/contact';
 import Experience from 'src/screens/experience';
 import Home from 'src/screens/home';
 import Settings from 'src/screens/settings';
+import { BottomTabNavigatorType } from 'src/types/navigation';
 
-const Tab = createMaterialBottomTabNavigator();
+const Tab = createMaterialBottomTabNavigator<BottomTabNavigatorType>();
 
 const BottomTabs: React.FC = () => {
   const theme = useTheme();
@@ -18,7 +19,6 @@ const BottomTabs: React.FC = () => {
   const title = (text: string) => Platform.select({ web: `jr | ${text}`, default: text });
 
   const getColor = (isFocus: boolean) => (isFocus ? theme.colors.card : theme.colors.disabled);
-
   return (
     <Tab.Navigator
     // activeColor={Colors.white}

@@ -7,10 +7,9 @@ import Card from 'src/components/card';
 import Container from 'src/components/container';
 import Button from 'src/components/native/button';
 import Switch from 'src/components/native/switch';
-import Headline from 'src/components/text/headline';
-import Text from 'src/components/text/text';
-import Title from 'src/components/text/title';
+import Text from 'src/components/native/text';
 import { useDefaultContext } from 'src/hooks/use-context';
+import { SettingsScreenPropType } from 'src/types/navigation';
 import { DeviceUtils } from 'src/utils/device';
 
 const styles = StyleSheet.create({
@@ -21,7 +20,7 @@ const styles = StyleSheet.create({
   buttonText: {},
 });
 
-const Settings: React.FC = () => {
+const Settings: React.FC<SettingsScreenPropType> = () => {
   const { themeContext, set } = useDefaultContext();
   const { colors } = useTheme();
   const { t, i18n } = useTranslation('translation');
@@ -43,9 +42,9 @@ const Settings: React.FC = () => {
 
   return (
     <Container>
-      <Title>{t('settings.description')}</Title>
+      <Text variant="title">{t('settings.description')}</Text>
       <Card>
-        <Headline>{t('settings.language')}</Headline>
+        <Text variant="headline"> {t('settings.language')}</Text>
         <View style={styles.row}>
           {/* outlined */}
           <Button
@@ -67,11 +66,11 @@ const Settings: React.FC = () => {
         </View>
       </Card>
       <Card>
-        <Headline>{t('settings.darkTheme')}</Headline>
+        <Text variant="headline"> {t('settings.darkTheme')}</Text>
         <Switch value={themeContext === 'dark'} onValueChange={isDark => set.theme(isDark ? 'dark' : 'light')} />
       </Card>
       <Card>
-        <Headline>{t('settings.interestLinks')}</Headline>
+        <Text variant="headline"> {t('settings.interestLinks')}</Text>
         {!DeviceUtils.isWeb && (
           <Text>
             <Trans i18nKey="settings.linkToWeb">

@@ -3,52 +3,50 @@ import { useTranslation } from 'react-i18next';
 
 import Card from 'src/components/card';
 import Container from 'src/components/container';
-import Caption from 'src/components/text/caption';
-import Paragraph from 'src/components/text/paragraph';
-import Subheading from 'src/components/text/subheading';
-import Title from 'src/components/text/title';
+import Text from 'src/components/native/text';
+import { ExpScreenPropType } from 'src/types/navigation';
 
-type translatedType = {
+type TranslatedType = {
   title: string;
   subTitle: string;
   description: string;
 };
 
-const Experience = () => {
+const Experience = (): React.FC<ExpScreenPropType> => {
   const { t } = useTranslation();
-  const workList = t('experience.workExperience.fields') as translatedType[];
-  const knowledgeList = t('experience.knowledge.fields') as translatedType[];
-  const educationList = t('experience.education.fields') as translatedType[];
+  const workList = t('experience.workExperience.fields') as TranslatedType[];
+  const knowledgeList = t('experience.knowledge.fields') as TranslatedType[];
+  const educationList = t('experience.education.fields') as TranslatedType[];
   return (
     <Container>
-      <Title>{t('experience.description')}</Title>
-      <Subheading>{t('experience.knowledge.title')}</Subheading>
+      <Text variant="title">{t('experience.description')}</Text>
+      <Text variant="subheading">{t('experience.knowledge.title')}</Text>
       <>
         {knowledgeList.map(job => (
           <Card key={job.title}>
-            <Subheading>{job.title}</Subheading>
-            <Caption>{job.subTitle}</Caption>
-            <Paragraph>{job.description}</Paragraph>
+            <Text variant="subheading">{job.title}</Text>
+            <Text variant="caption">{job.subTitle}</Text>
+            <Text variant="paragraph">{job.description}</Text>
           </Card>
         ))}
       </>
-      <Subheading>{t('experience.workExperience.title')}</Subheading>
+      <Text variant="subheading">{t('experience.workExperience.title')}</Text>
       <>
         {workList.map(job => (
           <Card key={job.title}>
-            <Subheading>{job.title}</Subheading>
-            <Caption>{job.subTitle}</Caption>
-            <Paragraph>{job.description}</Paragraph>
+            <Text variant="subheading">{job.title}</Text>
+            <Text variant="caption">{job.subTitle}</Text>
+            <Text variant="paragraph">{job.description}</Text>
           </Card>
         ))}
       </>
-      <Subheading>{t('experience.education.title')}</Subheading>
+      <Text variant="subheading">{t('experience.education.title')}</Text>
       <>
         {educationList.map(job => (
           <Card key={job.title}>
-            <Subheading>{job.title}</Subheading>
-            <Caption>{job.subTitle}</Caption>
-            <Paragraph>{job.description}</Paragraph>
+            <Text variant="subheading">{job.title}</Text>
+            <Text variant="caption">{job.subTitle}</Text>
+            <Text variant="paragraph">{job.description}</Text>
           </Card>
         ))}
       </>
