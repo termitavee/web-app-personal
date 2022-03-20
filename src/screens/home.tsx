@@ -1,13 +1,13 @@
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { Image, View, StyleSheet } from 'react-native';
-import { useTheme } from 'react-native-paper';
 
 import profileImage from 'src/assets/images/profile.jpg';
+import { useTheme } from 'src/assets/themes';
 import Container from 'src/components/container';
+import Text from 'src/components/native/text';
 import Separator from 'src/components/separator';
-import Text from 'src/components/text/text';
-import Title from 'src/components/text/title';
+import { HomeScreenPropType } from 'src/types/navigation';
 
 const styles = StyleSheet.create({
   imageCover: {
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
   footer: { paddingBottom: 10 },
 });
 
-const Home = ({ navigation }) => {
+const Home: React.FC<HomeScreenPropType> = ({ navigation }) => {
   const { t } = useTranslation();
   const { colors } = useTheme();
   const navigateToTab = (screen: 'Experience' | 'Contact' | 'Settings') => {
@@ -36,10 +36,14 @@ const Home = ({ navigation }) => {
     <Container>
       <View style={styles.imageCover}>
         <Image style={styles.Image} source={profileImage} />
-        <Title style={mainColorStyle}>Jose Roberto Domínguez</Title>
+        <Text variant="title" style={mainColorStyle}>
+          Jose Roberto Domínguez
+        </Text>
       </View>
       <Separator style={styles.separator} />
-      <Title style={mainColorStyle}>{t('home.description')}</Title>
+      <Text variant="title" style={mainColorStyle}>
+        {t('home.description')}
+      </Text>
 
       <Separator style={styles.separator} />
       <View style={styles.content} />

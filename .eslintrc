@@ -3,92 +3,106 @@
     "browser": true,
     "es6": true,
     "node": true
-    // "jest/globals": true
   },
+  "parser": "@typescript-eslint/parser",
   "plugins": ["react", "prettier", "@typescript-eslint", "react-hooks"],
   "extends": [
-    "airbnb",
     "eslint:recommended",
-    "plugin:import/typescript",
     "plugin:import/recommended",
     "plugin:react/recommended",
     "plugin:jest/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:react-hooks/recommended",
+    "airbnb",
     "prettier"
   ],
-  "globals": {
-    "Atomics": "readonly",
-    "SharedArrayBuffer": "readonly",
-    "__DEV__": "readonly",
-    "JSX": "readonly",
-    "NodeJS": "readonly",
-    "ReactNativePaper": "readonly"
-  },
-  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
     },
+    "ecmaVersion": 2020,
     "project": "./tsconfig.json",
-    "ecmaVersion": 2018,
     "sourceType": "module"
   },
+  "globals": {
+    "__DEV__": "readonly",
+    "Atomics": "readonly",
+    "JSX": "readonly",
+    "NodeJS": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
   "rules": {
-    "@typescript-eslint/ban-ts-ignore": [0],
-    "@typescript-eslint/camelcase": [0],
-    "@typescript-eslint/explicit-function-return-type": 0,
-    "@typescript-eslint/explicit-module-boundary-types": [0],
     "@typescript-eslint/naming-convention": [
       "error",
       {
-        "selector": "interface",
         "format": ["PascalCase"],
-        "custom": { "regex": "^I[A-Z]", "match": true }
+        "selector": ["interface", "typeLike"]
       }
     ],
-    "@typescript-eslint/no-unused-expressions": [1],
-    "import/extensions": [
+    "curly": ["error", "multi"],
+    "import/extensions": [0], // lots of false positives and tipescript manages properly
+    "import/no-extraneous-dependencies": [
       "error",
-      "ignorePackages",
       {
-        "js": "never",
-        "jsx": "never",
-        "ts": "never",
-        "tsx": "never",
-        ".svg": "never"
+        "devDependencies": ["**/*.test.ts", "**/*.test.tsx", "config/test/test-utils.tsx"],
+        "optionalDependencies": false,
+        "peerDependencies": false,
+        "bundledDependencies": false,
+        "packageDir": "./"
       }
-    ],
-    "import/no-extraneous-dependencies": ["error", { "devDependencies": true, "packageDir": "./" }],
+    ], // allow imports absolute path
+    "import/no-unresolved": [0], // lots of false positives and tipescript manages properly
     "import/order": [
       "error",
       {
+        "pathGroups": [{ "pattern": "src/**", "group": "internal" }],
         "newlines-between": "always",
-        "alphabetize": { "order": "asc", "caseInsensitive": false }
+        "pathGroupsExcludedImportTypes": ["react", "src/**"],
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
+        "alphabetize": {
+          "order": "asc"
+        }
       }
     ],
-    // fix bug
-    "no-use-before-define": [0],
-    "@typescript-eslint/no-use-before-define": [1],
-    // fix bug
-    "no-unused-vars": [0],
-    "@typescript-eslint/no-unused-vars": [2],
-    // fix bug
-    "no-shadow": "off",
-    "import/no-unresolved": [0],
+    "no-nested-ternary": "off",
+    // note you must disable the base rule as it can report incorrect errors
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
 
-    "@typescript-eslint/no-shadow": [2],
-    "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".jsx"] }],
-    "react/jsx-props-no-spreading": [0],
-    "react/prop-types": [0],
-    "react/require-default-props": [0],
-    "no-nested-ternary": [0],
-    "no-console": [0]
+    "no-shadow": "off", // bug with typescript
+    "@typescript-eslint/no-shadow": "error", // bug with typescript
+    "no-unused-vars": "off", // @typescript-eslint has it
+    "no-void": ["error", { "allowAsStatement": true }],
+    "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
+    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react/function-component-definition": [
+      1,
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".tsx"]
+      }
+    ], // use react components only in tsx files, no jsx or ts
+    "react/jsx-props-no-spreading": [0], // typescript checks values
+    "react/prop-types": "off", // Since we do not use prop-types
+    "react/require-default-props": "off", // Since we do not use prop-types
+    "react/style-prop-object": [0] // inconsistent with some libraries in RN
   },
-  "settings": {
-    "import/resolver": {
-      "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx", ".svg", ".jpg", ".native.js", ".ios.js", ".android.js", "d.ts"],
-        "paths": ["./"]
+  "overrides": [
+    {
+      "files": ["__tests__/**"],
+      "plugins": ["jest"],
+      "rules": {
+        // you should turn the original rule off *only* for test files
+        "@typescript-eslint/unbound-method": "off"
+        // "jest/unbound-method": "error"
       }
     }
-  }
+  ]
 }

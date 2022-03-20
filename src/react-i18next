@@ -1,0 +1,10 @@
+import 'react-i18next';
+// react-i18next.d.ts
+import { defaultNS, resources } from 'src/utils/translation';
+// add types for translation hook
+declare module 'react-i18next' {
+  interface CustomTypeOptions {
+    defaultNS: typeof defaultNS;
+    resources: typeof resources['en'];
+  }
+}
