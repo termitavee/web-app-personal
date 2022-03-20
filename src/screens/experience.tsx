@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -18,7 +19,7 @@ const Experience: React.FC<ExpScreenPropType> = () => {
   const knowledgeList = t('experience.knowledge.fields') as TranslatedType[];
   const educationList = t('experience.education.fields') as TranslatedType[];
   return (
-    <Container>
+    <Container noHeader>
       <Text variant="title">{t('experience.description')}</Text>
       <Text variant="subheading">{t('experience.knowledge.title')}</Text>
       <>

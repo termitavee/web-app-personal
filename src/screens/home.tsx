@@ -33,7 +33,7 @@ const Home: React.FC<HomeScreenPropType> = ({ navigation }) => {
   };
   const mainColorStyle = { color: colors.primary };
   return (
-    <Container>
+    <Container noHeader>
       <View style={styles.imageCover}>
         <Image style={styles.Image} source={profileImage} />
         <Text variant="title" style={mainColorStyle}>

@@ -1,7 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { ThemeProvider } from '@shopify/restyle';
 import React from 'react';
-import { StyleSheet, View, Appearance, ColorSchemeName } from 'react-native';
+import { Appearance, ColorSchemeName } from 'react-native';
 import { ToastProvider } from 'react-native-toast-notifications';
 
 import { darkTheme, lightTheme } from 'src/assets/themes';
@@ -10,15 +10,6 @@ import { initialWindowMetrics, SafeAreaProvider } from 'src/hooks/use-safe-area'
 import { UseIsInit } from 'src/utils/translations';
 
 import Navigation from './tab-navigation';
-
-const styles = StyleSheet.create({
-  container: {
-    alignSelf: 'center',
-    width: '100%',
-    maxWidth: 500,
-    height: '100%',
-  },
-});
 
 const App: React.FC = () => {
   const [themeContext, setTheme] = React.useState<ColorSchemeName>(Appearance.getColorScheme());

@@ -1,7 +1,7 @@
 import React from 'react';
-import { StyleSheet, ViewProps } from 'react-native';
+import { StyleSheet } from 'react-native';
 
-import View from 'src/components/native/view';
+import View, { ViewProps } from 'src/components/native/view';
 import { childrenType } from 'src/types/components';
 
 const styles = StyleSheet.create({

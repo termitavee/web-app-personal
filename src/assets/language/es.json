@@ -15,11 +15,11 @@
       "fields": [
         {
           "title": "JavaScript",
-          "description": " Incluyendo React (y React Context), Node, React Native, Redux (redux thunk y redux saga), GraphQL."
+          "description": "Incluyendo React (y React Context), Node, React Native, Redux (redux thunk y redux saga), GraphQL."
         },
         {
           "title": "HTML5 and CSS3",
-          "description": "conocimiento de Bootstrap, Styled Components, Foundation y SASS"
+          "description": "Conocimiento de Bootstrap, Styled Components, Foundation y SASS"
         },
         {
           "title": "Base de datos",
@@ -97,6 +97,7 @@
     "language": "Idioma",
     "spanish": "Español",
     "english": "Inglés",
+    "customization": "Personalización",
     "darkTheme": "Tema oscuro",
     "interestLinks": "Enlaces de interes",
     "linkToWeb": "Enlace a la <1>versión Web</1>",

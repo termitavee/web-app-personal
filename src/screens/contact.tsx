@@ -44,15 +44,19 @@ const Contact: React.FC<ContactScreenPropType> = () => {
     addToClipboard(alt || text);
   };
 
-  const onPressLinkedin = () => void openUrlOrCopy(`https://${urlLinkedin}`, urlLinkedin);
-  const onPressGithub = () => void openUrlOrCopy(`https://${urlGithub}`, urlGithub);
+  const onPressLinkedin = () => {
+    void openUrlOrCopy(`https://${urlLinkedin}`, urlLinkedin);
+  };
+  const onPressGithub = () => {
+    void openUrlOrCopy(`https://${urlGithub}`, urlGithub);
+  };
   const onPressEmail = () => {
     if (DeviceUtils.isMobile) void openUrlOrCopy(`mailto:${urlMail}`, urlMail);
     else addToClipboard(urlMail);
   };
 
   return (
-    <Container>
+    <Container noHeader>
       <Text variant="title">{t('contact.description')}</Text>
       <Button mode="outlined" onPress={onPressLinkedin}>
         <FontAwesome5icons name="linkedin" size={26} /> Linkedin
@@ -60,12 +64,12 @@ const Contact: React.FC<ContactScreenPropType> = () => {
       <Separator style={styles.separator} />
 
       <Button mode="outlined" onPress={onPressGithub}>
-        <FontAwesome5icons name="github" size={26} /> Github{' '}
+        <FontAwesome5icons name="github" size={26} /> Github
       </Button>
       <Separator style={styles.separator} />
 
       <Button mode="outlined" onPress={onPressEmail}>
-        <Ionicons name="mail" size={26} /> {urlMail}{' '}
+        <Ionicons name="mail" size={26} /> {urlMail}
       </Button>
     </Container>
   );

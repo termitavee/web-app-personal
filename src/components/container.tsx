@@ -4,10 +4,14 @@ import React from 'react';
 // import { useTranslation } from 'react-i18next';
 import { StyleSheet, ViewProps, ScrollView, ViewStyle, StyleProp } from 'react-native';
 
-import { getSafeArea } from 'src/hooks/use-safe-area';
+import { useTheme } from 'src/assets/themes';
+import { SafeAreaView, Edge } from 'src/hooks/use-safe-area';
 import { childrenType } from 'src/types/components';
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
   scroll: { flexGrow: 1 },
   scrollInner: {
     marginHorizontal: 10,
@@ -18,6 +22,8 @@ const styles = StyleSheet.create({
 interface IContainerProps extends ViewProps {
   children: childrenType | childrenType[];
   noHeader?: boolean;
+  edges?: Edge[];
+
   // leftHeaderContent?: childrenType;
   // tightHeaderContent?: childrenType;
   // title?: string;
@@ -29,14 +35,13 @@ const Container: React.FC<IContainerProps> = ({
   style,
   children,
   noHeader,
-
+  edges = noHeader ? ['left', 'right', 'top'] : ['left', 'right'],
   ...props
 }) => {
   // const { themeContext, set } = useDefaultContext();
-  const {
-    padding: { paddingTop },
-  } = getSafeArea();
-  // const { t } = useTranslation();
+
+  const { colors } = useTheme();
+
   // const defTitle = useNavigationState(({ routeNames, index }) => t(`${routeNames[index].toLowerCase()}.title`));
 
   /* {!noHeader && (
@@ -46,16 +51,27 @@ const Container: React.FC<IContainerProps> = ({
       {tightHeaderContent}
     </Appbar.Header>
   )} */
-
   return (
-    <ScrollView
-      style={[styles.scroll, style]}
-      contentContainerStyle={[styles.scrollInner, { paddingTop: noHeader ? paddingTop : 10 }]}
-      showsVerticalScrollIndicator={false}
+    <SafeAreaView
+      edges={edges}
+      style={[
+        styles.container,
+        {
+          backgroundColor: colors.background,
+        },
+        style,
+      ]}
       {...props}
     >
-      {children}
-    </ScrollView>
+      <ScrollView
+        style={[styles.scroll, style]}
+        contentContainerStyle={styles.scrollInner}
+        showsVerticalScrollIndicator={false}
+        {...props}
+      >
+        {children}
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 
