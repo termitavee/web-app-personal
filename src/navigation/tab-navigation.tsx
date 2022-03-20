@@ -1,5 +1,5 @@
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import React from 'react';
+import React, { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Platform } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -18,7 +18,23 @@ const BottomTabs: React.FC = () => {
   const { t } = useTranslation();
   const title = (text: string) => Platform.select({ web: `jr | ${text}`, default: text });
 
-  const getColor = (isFocus: boolean) => (isFocus ? theme.colors.card : theme.colors.disabled);
+  type TabProps = { focused: boolean; color: string };
+
+  const genIcon = useCallback(
+    (name: string, focused: boolean) => (
+      <Ionicons name={name} color={focused ? theme.colors.card : theme.colors.disabled} size={26} />
+    ),
+    [theme.colors.card, theme.colors.disabled],
+  );
+
+  const tabBarIconHome = useCallback(({ focused }: TabProps) => genIcon('home', focused), [genIcon]);
+
+  const tabBarIconExperience = useCallback(({ focused }: TabProps) => genIcon('school', focused), [genIcon]);
+
+  const tabBarIconContact = useCallback(({ focused }: TabProps) => genIcon('mail', focused), [genIcon]);
+
+  const tabBarIconSettings = useCallback(({ focused }: TabProps) => genIcon('settings-sharp', focused), [genIcon]);
+
   return (
     <Tab.Navigator
     // activeColor={Colors.white}
@@ -31,7 +47,7 @@ const BottomTabs: React.FC = () => {
         options={{
           title: title(t('home.title')),
           tabBarLabel: t('home.title'),
-          tabBarIcon: ({ focused }) => <Ionicons name="home" color={getColor(focused)} size={26} />,
+          tabBarIcon: tabBarIconHome,
         }}
       />
       <Tab.Screen
@@ -40,7 +56,7 @@ const BottomTabs: React.FC = () => {
         options={{
           title: title(t('experience.title')),
           tabBarLabel: t('experience.title'),
-          tabBarIcon: ({ focused }) => <Ionicons name="school" color={getColor(focused)} size={26} />,
+          tabBarIcon: tabBarIconExperience,
         }}
       />
       <Tab.Screen
@@ -49,7 +65,7 @@ const BottomTabs: React.FC = () => {
         options={{
           title: title(t('contact.title')),
           tabBarLabel: t('contact.title'),
-          tabBarIcon: ({ focused }) => <Ionicons name="mail" color={getColor(focused)} size={26} />,
+          tabBarIcon: tabBarIconContact,
         }}
       />
       <Tab.Screen
@@ -58,7 +74,7 @@ const BottomTabs: React.FC = () => {
         options={{
           title: title(t('settings.title')),
           tabBarLabel: t('settings.title'),
-          tabBarIcon: ({ focused }) => <Ionicons name="settings-sharp" color={getColor(focused)} size={26} />,
+          tabBarIcon: tabBarIconSettings,
         }}
       />
     </Tab.Navigator>
