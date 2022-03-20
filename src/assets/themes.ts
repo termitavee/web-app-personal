@@ -5,28 +5,52 @@ import { StyleProp, TextStyle } from 'react-native';
 const textVariants: Record<string, StyleProp<TextStyle>> = {
   default: {
     color: 'text',
+    textAlign: 'left',
   },
   caption: {
     color: 'text',
+    fontSize: 12,
+    lineHeight: 20,
+    marginVertical: 'textMarginVertical',
+    letterSpacing: 0.4,
   },
   headline: {
     color: 'text',
+    fontSize: 24,
+    lineHeight: 32,
+    marginVertical: 'textMarginVertical',
+    letterSpacing: 0,
   },
   paragraph: {
     color: 'text',
+    fontSize: 14,
+    lineHeight: 20,
+    marginVertical: 'textMarginVertical',
+    letterSpacing: 0.25,
   },
   subheading: {
     color: 'text',
+    fontSize: 16,
+    lineHeight: 24,
+    marginVertical: 'textMarginVertical',
+    letterSpacing: 0.5,
   },
   text: {
     color: 'text',
+    textAlign: 'left',
   },
   title: {
     color: 'text',
+    fontSize: 20,
+    lineHeight: 30,
+    marginVertical: 'textMarginVertical',
+    letterSpacing: 0.15,
   },
 };
 
-const spacing: Record<string, string | number> = {};
+const spacing: Record<string, string | number> = {
+  textMarginVertical: 2,
+};
 
 export const minTabletWidth = 640;
 
