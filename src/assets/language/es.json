@@ -44,8 +44,13 @@
       "title": "Experiencia laboral",
       "fields": [
         {
+          "title": "Desarrollador React native en Multisafepay",
+          "subTitle": "Noviembre 2021 – presente",
+          "description": "- Desarrollo y distribución de aplicaciones para Android e iOS usando React Native Expo incluyendo librarias nativas\n- Trabajo en múltiples aplicaciones incluyendo una palicacion para POS y para envio yrecogida de pedidos para restauurantes\n-Control de errores con Sentry\n-trabajo usando metodologías Agile, Kanban"
+        },
+        {
           "title": "Desarrollador React native en Aluxion Labs",
-          "subTitle": "Marzo 2018 – presente",
+          "subTitle": "Marzo 2018 – Noviembre 2021",
           "description": "- Desarrollo y distribución de aplicaciones para Android e iOS usando React Native (incluyendo el uso de código nativo con ObjectiveC/SWIFT en iOS y Java/Kotlin en Android) y Expo,\n- Trabajo en múltiples aplicaciones, incluidas las aplicaciones de Fintech (inversiones y recomendaciones) y salud (seguros de salud, administración de usuarios de centros de salud).\n- Desarrollo de una aplicación de apoyo para iWatch en Swift.\n- Uso de integración continua con App Center.\n- Configuración y uso de tecnologías y librerías como notificaciones push (con Firsebase), Google Maps, Analytics (Firebase Analytics, Previosly Google Analytics).\n- El trabajo usando metodologías Agile, como Scrumm y Kanban."
         },
         {

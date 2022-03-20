@@ -44,8 +44,13 @@
       "title": "Work experience",
       "fields": [
         {
-          "title": "React native developer en Aluxion Labs",
-          "subTitle": "March 2018 – present",
+          "title": "React native developer at Multisafepay",
+          "subTitle": "november 2021 – present",
+          "description": "- Development of Android and iOS apps using React Native expo including native code libraries\n- Worked in multiple apps including an app for POS and app for takeaway and delivery restaurants \n- Error tracking with sentry\n- agile and Kanban methodologies."
+        },
+        {
+          "title": "React native developer at Aluxion Labs",
+          "subTitle": "March 2018 – november 2021",
           "description": "- Development and distribution of Android and iOS apps using React Native (even native usage with objectiveC/swift on iOS and Java/kotlin on Android) and expo,\n- Worked in multiple apps including fintech (investment and recomendation) and health apps (health insurance and user management in clinics).\n- Development of a support app for iWatch in swift.\n- Use of continuous integration with App Center.\n- Configure and usage of tecnologies and libraries like Push notifications (with firebase), Google maps, Analytics (Firebase Analytics, previosly Google Analytics).\n- worked using scrumm, agile and Kanban methodologies."
         },
         {

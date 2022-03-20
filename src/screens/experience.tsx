@@ -12,7 +12,7 @@ type TranslatedType = {
   description: string;
 };
 
-const Experience = (): React.FC<ExpScreenPropType> => {
+const Experience: React.FC<ExpScreenPropType> = () => {
   const { t } = useTranslation();
   const workList = t('experience.workExperience.fields') as TranslatedType[];
   const knowledgeList = t('experience.knowledge.fields') as TranslatedType[];

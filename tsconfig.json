@@ -4,6 +4,7 @@
     "declaration": true,
     "sourceMap": true,
     "removeComments": true,
+    "incremental": false,
     "strict": true,
     "noImplicitAny": false,
     "noUnusedLocals": true,
