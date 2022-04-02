@@ -92,11 +92,12 @@
   },
   "settings": {
     "title": "Settings",
-    "description": "Anohter language? Too much bright? Want to know how this is done? The answer below",
+    "description": "Another language? Too much bright? Want to know how this is done? The answer below",
 
     "language": "Language",
     "spanish": "Spanish",
     "english": "English",
+    "customization": "Customization",
     "darkTheme": "Dark Theme",
     "interestLinks": "Links of Interest",
     "linkToWeb": "Link to the <1>Web version</1>",
@@ -105,5 +106,10 @@
     "linkToSource": "Link to the <1>source code</1>"
   },
   "addToClipboard": "Press here to copy, in case button doesn't work",
-  "addedToClipboard": "Copied"
+  "addedToClipboard": "Copied",
+  "accessibility": {
+    "linkedinButtonHint": "Navigate to linkedin",
+    "githubButtonHint": "Navigate to Github",
+    "emailButtonHint": "open or copy email"
+  }
 }

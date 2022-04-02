@@ -4,8 +4,9 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { DeviceUtils } from 'src/utils/device';
 
 export { SafeAreaView, SafeAreaProvider, initialWindowMetrics } from 'react-native-safe-area-context';
+export type Edge = 'top' | 'right' | 'bottom' | 'left';
 
-export const getSafeArea = () => {
+export const useSafeArea = () => {
   const { top: topDef, left, right, bottom } = useSafeAreaInsets();
   const top = (DeviceUtils.isAndroid ? StatusBar.currentHeight : topDef) || 20;
   return {

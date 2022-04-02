@@ -2,15 +2,15 @@ import React from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import { View, StyleSheet } from 'react-native';
 
-import { useTheme } from 'src/assets/themes';
 import Card from 'src/components/card';
 import Container from 'src/components/container';
+import SwitchForm from 'src/components/form/switch';
 import Button from 'src/components/native/button';
-import Switch from 'src/components/native/switch';
 import Text from 'src/components/native/text';
 import { useDefaultContext } from 'src/hooks/use-context';
 import { SettingsScreenPropType } from 'src/types/navigation';
 import { DeviceUtils } from 'src/utils/device';
+import { useTheme } from 'src/utils/themes';
 
 const styles = StyleSheet.create({
   row: {
@@ -25,26 +25,34 @@ const Settings: React.FC<SettingsScreenPropType> = () => {
   const { colors } = useTheme();
   const { t, i18n } = useTranslation('translation');
 
-  const toogleLang = lang => {
+  const toogleLang = (lang: string) => {
     if (i18n.language !== lang) void i18n.changeLanguage(lang);
   };
 
-  const onPressWeb = () => DeviceUtils.openUrl('https://jrdominguez.dev');
+  const onPressWeb = () => {
+    void DeviceUtils.openUrl('https://jrdominguez.dev');
+  };
 
-  const onPressApp = () =>
-    DeviceUtils.openUrl(
+  const onPressApp = () => {
+    void DeviceUtils.openUrl(
       `https://firebasestorage.googleapis.com/v0/b/termitavee-personal.appspot.com/o/jrdominguez.apk?alt=media`,
     );
+  };
+  const onPressExpo = () => {
+    void DeviceUtils.openUrl('https://expo.dev/@termitavee/jrdominguez');
+  };
 
-  const onPressExpo = () => DeviceUtils.openUrl('https://expo.dev/@termitavee/jrdominguez');
+  const onPressSource = () => {
+    void DeviceUtils.openUrl('https://github.com/termitavee/web-app-personal');
+  };
 
   const onPressSource = () => DeviceUtils.openUrl('https://github.com/termitavee/web-app-personal');
 
   return (
-    <Container>
+    <Container noHeader>
       <Text variant="title">{t('settings.description')}</Text>
       <Card>
-        <Text variant="headline"> {t('settings.language')}</Text>
+        <Text variant="headline">{t('settings.language')}</Text>
         <View style={styles.row}>
           {/* outlined */}
           <Button
@@ -66,11 +74,15 @@ const Settings: React.FC<SettingsScreenPropType> = () => {
         </View>
       </Card>
       <Card>
-        <Text variant="headline"> {t('settings.darkTheme')}</Text>
-        <Switch value={themeContext === 'dark'} onValueChange={isDark => set.theme(isDark ? 'dark' : 'light')} />
+        <Text variant="headline">{t('settings.customization')}</Text>
+        <SwitchForm
+          title={t('settings.darkTheme')}
+          value={themeContext === 'dark'}
+          onChange={isDark => set.theme(isDark ? 'dark' : 'light')}
+        />
       </Card>
       <Card>
-        <Text variant="headline"> {t('settings.interestLinks')}</Text>
+        <Text variant="headline">{t('settings.interestLinks')}</Text>
         {!DeviceUtils.isWeb && (
           <Text>
             <Trans i18nKey="settings.linkToWeb">

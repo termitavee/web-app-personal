@@ -1,8 +1,8 @@
 import React from 'react';
-import { StyleSheet, ViewProps } from 'react-native';
+import { StyleSheet } from 'react-native';
 
-import View from 'src/components/native/view';
-import { childrenType } from 'src/types/components';
+import View, { ViewProps } from 'src/components/native/view';
+import { ChildrenType } from 'src/types/components';
 
 const styles = StyleSheet.create({
   card: {
@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
 });
 
 interface ICardProps extends ViewProps {
-  children: childrenType;
+  children: ChildrenType;
 }
 
 const Card: React.FC<ICardProps> = ({ style, children, ...props }) => (

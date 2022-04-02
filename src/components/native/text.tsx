@@ -2,7 +2,7 @@ import { createText, TextProps as NativeTextProps } from '@shopify/restyle';
 import React from 'react';
 import { StyleProp, TextStyle, TextProps as RNTextProps } from 'react-native';
 
-import { Theme } from 'src/assets/themes';
+import { Theme } from 'src/utils/themes';
 
 const NativeText = createText<Theme>();
 

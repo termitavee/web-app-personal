@@ -15,11 +15,11 @@
       "fields": [
         {
           "title": "JavaScript",
-          "description": " Incluyendo React (y React Context), Node, React Native, Redux (redux thunk y redux saga), GraphQL."
+          "description": "Incluyendo React (y React Context), Node, React Native, Redux (redux thunk y redux saga), GraphQL."
         },
         {
           "title": "HTML5 and CSS3",
-          "description": "conocimiento de Bootstrap, Styled Components, Foundation y SASS"
+          "description": "Conocimiento de Bootstrap, Styled Components, Foundation y SASS"
         },
         {
           "title": "Base de datos",
@@ -97,6 +97,7 @@
     "language": "Idioma",
     "spanish": "Español",
     "english": "Inglés",
+    "customization": "Personalización",
     "darkTheme": "Tema oscuro",
     "interestLinks": "Enlaces de interes",
     "linkToWeb": "Enlace a la <1>versión Web</1>",
@@ -105,5 +106,10 @@
     "linkToSource": "Enlace al <1>código fuente</1>"
   },
   "addToClipboard": "Pulsa aquí para copiar, en caso de que el botón no funcione",
-  "addedToClipboard": "Copiado"
+  "addedToClipboard": "Copiado",
+  "accessibility": {
+    "linkedinButtonHint": "Navegar a mi linkedin",
+    "githubButtonHint": "Navegar a mi  Github",
+    "emailButtonHint": "intentar abrir o copiar mi email"
+  }
 }

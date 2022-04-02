@@ -40,7 +40,7 @@
         "selector": ["interface", "typeLike"]
       }
     ],
-    "curly": ["error", "multi"],
+    "curly": ["error", "multi-line"],
     "import/extensions": [0], // lots of false positives and tipescript manages properly
     "import/no-extraneous-dependencies": [
       "error",

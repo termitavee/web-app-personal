@@ -12,11 +12,10 @@ const isMobile = isAndroid || isIos;
 const canOpenURL = (url: string) => Linking.canOpenURL(url);
 
 const openUrl = (url: string) =>
-  canOpenURL(url).then(() => {
-    if (Platform.OS === 'web') window.open(url, '_blank');
-    else Linking.openURL(url);
-  });
-const addToClipboard = async (text: string) => Clipboard.setString(text);
+  canOpenURL(url).then(() => (Platform.OS === 'web' ? window.open(url, '_blank') : Linking.openURL(url)));
+
+// eslint-disable-next-line @typescript-eslint/require-await
+const addToClipboard = async (text: string): Promise<void> => Clipboard.setString(text);
 
 export const DeviceUtils = {
   isWeb,

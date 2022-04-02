@@ -3,11 +3,12 @@ import { Trans, useTranslation } from 'react-i18next';
 import { Image, View, StyleSheet } from 'react-native';
 
 import profileImage from 'src/assets/images/profile.jpg';
-import { useTheme } from 'src/assets/themes';
 import Container from 'src/components/container';
 import Text from 'src/components/native/text';
 import Separator from 'src/components/separator';
 import { HomeScreenPropType } from 'src/types/navigation';
+import DeviceUtils from 'src/utils/device';
+import { useTheme } from 'src/utils/themes';
 
 const styles = StyleSheet.create({
   imageCover: {
@@ -33,7 +34,7 @@ const Home: React.FC<HomeScreenPropType> = ({ navigation }) => {
   };
   const mainColorStyle = { color: colors.primary };
   return (
-    <Container>
+    <Container noHeader>
       <View style={styles.imageCover}>
         <Image style={styles.Image} source={profileImage} />
         <Text variant="title" style={mainColorStyle}>
@@ -49,31 +50,35 @@ const Home: React.FC<HomeScreenPropType> = ({ navigation }) => {
       <View style={styles.content} />
 
       <View style={styles.footer}>
-        <Separator style={styles.separator} />
-        <Text>
-          <Trans i18nKey="home.goToExp">
-            go to tab
-            <Text style={mainColorStyle} onPress={() => navigateToTab('Experience')}>
-              experience
+        {DeviceUtils.isIos && (
+          <>
+            <Separator style={styles.separator} />
+            <Text>
+              <Trans i18nKey="home.goToExp">
+                go to tab
+                <Text style={mainColorStyle} onPress={() => navigateToTab('Experience')}>
+                  experience
+                </Text>
+              </Trans>
             </Text>
-          </Trans>
-        </Text>
-        <Text>
-          <Trans i18nKey="home.goToContact">
-            go to tab
-            <Text style={mainColorStyle} onPress={() => navigateToTab('Contact')}>
-              contact
+            <Text>
+              <Trans i18nKey="home.goToContact">
+                go to tab
+                <Text style={mainColorStyle} onPress={() => navigateToTab('Contact')}>
+                  contact
+                </Text>
+              </Trans>
             </Text>
-          </Trans>
-        </Text>
-        <Text>
-          <Trans i18nKey="home.goToSetings">
-            go to tab
-            <Text style={mainColorStyle} onPress={() => navigateToTab('Settings')}>
-              settings
+            <Text>
+              <Trans i18nKey="home.goToSetings">
+                go to tab
+                <Text style={mainColorStyle} onPress={() => navigateToTab('Settings')}>
+                  settings
+                </Text>
+              </Trans>
             </Text>
-          </Trans>
-        </Text>
+          </>
+        )}
       </View>
     </Container>
   );

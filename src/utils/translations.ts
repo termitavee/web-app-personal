@@ -34,6 +34,7 @@ const init = () =>
     })
     // for all options read: https://www.i18next.com/overview/configuration-options
     .init({
+      compatibilityJSON: 'v3',
       fallbackLng: __DEV__ ? 'es' : 'en',
       resources,
       defaultNS,

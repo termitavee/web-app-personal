@@ -2,7 +2,7 @@ import { createBox, BoxProps } from '@shopify/restyle';
 import React, { ReactNode } from 'react';
 import { StyleProp, ViewStyle as ViewStyleNative } from 'react-native';
 
-import { Theme } from 'src/assets/themes';
+import { Theme } from 'src/utils/themes';
 
 const Box = createBox<Theme>();
 
