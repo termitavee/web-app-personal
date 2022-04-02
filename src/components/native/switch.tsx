@@ -1,29 +1,11 @@
 import React from 'react';
 import { ViewStyle, Switch as SwitchNative, SwitchProps, StyleProp } from 'react-native';
 
-import { useTheme } from 'src/assets/themes';
 import DeviceUtils from 'src/utils/device';
+import { useTheme } from 'src/utils/themes';
 
 interface IButtonProps extends SwitchProps {
   style?: StyleProp<ViewStyle>;
-
-  // mode?: 'text' | 'outlined' | 'contained';
-  // dark?: boolean;
-  // compact?: boolean;
-  // color?: string;
-  // loading?: boolean;
-  // icon?: IconSource;
-  // disabled?: boolean;
-  // children: React.ReactNode;
-  // uppercase?: boolean;
-  // accessibilityLabel?: string;
-  // onPress?: () => void;
-  // onLongPress?: () => void;
-  // contentStyle?: StyleProp<ViewStyle>;
-  // style?: StyleProp<ViewStyle>;
-  // labelStyle?: StyleProp<TextStyle>;
-  // theme?: Theme;
-  // testID?: string;
 }
 
 const Switch = ({ style, ...props }: IButtonProps) => {

@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { StyleSheet, ViewStyle, Pressable, PressableProps, StyleProp, TextStyle } from 'react-native';
 
-import { useTheme } from 'src/assets/themes';
+import { useTheme } from 'src/utils/themes';
 
 import Text from './text';
 
@@ -25,22 +25,6 @@ interface IButtonProps extends PressableProps {
   labelStyle?: StyleProp<TextStyle>;
   mode?: 'text' | 'outlined' | 'contained';
   color?: string;
-  // dark?: boolean;
-  // compact?: boolean;
-  // color?: string;
-  // loading?: boolean;
-  // icon?: IconSource;
-  // disabled?: boolean;
-  // children: React.ReactNode;
-  // uppercase?: boolean;
-  // accessibilityLabel?: string;
-  // onPress?: () => void;
-  // onLongPress?: () => void;
-  // contentStyle?: StyleProp<ViewStyle>;
-  // style?: StyleProp<ViewStyle>;
-  // labelStyle?: StyleProp<TextStyle>;
-  // theme?: Theme;
-  // testID?: string;
 }
 
 const Button = ({ style, children, mode = 'contained', ...props }: IButtonProps) => {
@@ -55,7 +39,10 @@ const Button = ({ style, children, mode = 'contained', ...props }: IButtonProps)
   }, [mode, colors.primary]);
 
   return (
-    <Pressable style={[styles.button, stylesMode, { borderColor: colors.primary }, style]} {...props}>
+    <Pressable
+      style={[styles.button, stylesMode, { backgroundColor: colors.primary, borderColor: colors.primary }, style]}
+      {...props}
+    >
       <Text>{children}</Text>
     </Pressable>
   );

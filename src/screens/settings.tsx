@@ -2,7 +2,6 @@ import React from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import { View, StyleSheet } from 'react-native';
 
-import { useTheme } from 'src/assets/themes';
 import Card from 'src/components/card';
 import Container from 'src/components/container';
 import SwitchForm from 'src/components/form/switch';
@@ -11,6 +10,7 @@ import Text from 'src/components/native/text';
 import { useDefaultContext } from 'src/hooks/use-context';
 import { SettingsScreenPropType } from 'src/types/navigation';
 import { DeviceUtils } from 'src/utils/device';
+import { useTheme } from 'src/utils/themes';
 
 const styles = StyleSheet.create({
   row: {

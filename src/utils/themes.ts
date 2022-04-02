@@ -1,6 +1,7 @@
 import { DefaultTheme, DarkTheme as DefaultDarkTheme } from '@react-navigation/native';
 import { Breakpoint, createTheme, useTheme as useThemeDef } from '@shopify/restyle';
-import { StyleProp, TextStyle } from 'react-native';
+import React from 'react';
+import { StyleProp, TextStyle, useWindowDimensions } from 'react-native';
 
 const textVariants: Record<string, StyleProp<TextStyle>> = {
   default: {
@@ -60,7 +61,7 @@ const breakpoints: Record<string, Breakpoint> = {
     width: 768,
     height: minTabletWidth,
   },
-  largeTablet: {
+  desktop: {
     width: 1024,
     height: 1024,
   },
@@ -164,3 +165,28 @@ export const darkTheme: Theme = {
 };
 
 export const useTheme = <T = Theme>(): T => useThemeDef<T>();
+
+export const useBreakpoint = () => {
+  const {
+    breakpoints: { desktop, tablet, phone },
+  } = useTheme();
+  const { width, height } = useWindowDimensions();
+
+  return React.useMemo(() => {
+    const desktopSize = typeof desktop === 'number' ? { width: desktop, height: 0 } : desktop;
+    const tabletSize = typeof tablet === 'number' ? { width: tablet, height: 0 } : tablet;
+    const phoneSize = typeof phone === 'number' ? { width: phone, height: 0 } : phone;
+
+    const isDesktop = width >= desktopSize.width && height >= desktopSize.height;
+    const isTablet = !isDesktop && width >= tabletSize.width && height >= tabletSize.height;
+    const isPhone = !isTablet && !isDesktop;
+
+    return {
+      isDesktop,
+      isTablet,
+      isPhone,
+      breakpoint: isDesktop ? desktopSize : isTablet ? tabletSize : phoneSize,
+      breakpoints: { desktop, phone, tablet },
+    };
+  }, [width, height, desktop, phone, tablet]);
+};

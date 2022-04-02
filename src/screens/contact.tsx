@@ -58,17 +58,35 @@ const Contact: React.FC<ContactScreenPropType> = () => {
   return (
     <Container noHeader>
       <Text variant="title">{t('contact.description')}</Text>
-      <Button mode="outlined" onPress={onPressLinkedin}>
+      <Button
+        accessible
+        accessibilityLabel="Linkedin"
+        accessibilityHint={t('linkedinButtonHint')}
+        mode="outlined"
+        onPress={onPressLinkedin}
+      >
         <FontAwesome5icons name="linkedin" size={26} /> Linkedin
       </Button>
       <Separator style={styles.separator} />
 
-      <Button mode="outlined" onPress={onPressGithub}>
+      <Button
+        accessible
+        accessibilityLabel="Github"
+        accessibilityHint={t('githubButtonHint')}
+        mode="outlined"
+        onPress={onPressGithub}
+      >
         <FontAwesome5icons name="github" size={26} /> Github
       </Button>
       <Separator style={styles.separator} />
 
-      <Button mode="outlined" onPress={onPressEmail}>
+      <Button
+        accessible
+        accessibilityLabel={urlMail}
+        accessibilityHint={t('emailButtonHint')}
+        mode="outlined"
+        onPress={onPressEmail}
+      >
         <Ionicons name="mail" size={26} /> {urlMail}
       </Button>
     </Container>

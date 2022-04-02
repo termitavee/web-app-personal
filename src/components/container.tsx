@@ -1,17 +1,18 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-// import { useNavigationState } from '@react-navigation/core';
-import React from 'react';
-// import { useTranslation } from 'react-i18next';
+import React, { useMemo } from 'react';
 import { StyleSheet, ViewProps, ScrollView, ViewStyle, StyleProp } from 'react-native';
 
-import { useTheme } from 'src/assets/themes';
 import { SafeAreaView, Edge } from 'src/hooks/use-safe-area';
-import { childrenType } from 'src/types/components';
+import { ChildrenType } from 'src/types/components';
+import { useBreakpoint, useTheme } from 'src/utils/themes';
+
+import View from './native/view';
 
 const styles = StyleSheet.create({
-  container: {
+  cover: {
     flex: 1,
+    alignItems: 'center',
   },
+  safeArea: { flex: 1 },
   scroll: { flexGrow: 1 },
   scrollInner: {
     marginHorizontal: 10,
@@ -20,14 +21,10 @@ const styles = StyleSheet.create({
 });
 
 interface IContainerProps extends ViewProps {
-  children: childrenType | childrenType[];
+  children: ChildrenType | ChildrenType[];
   noHeader?: boolean;
   edges?: Edge[];
-
-  // leftHeaderContent?: childrenType;
-  // tightHeaderContent?: childrenType;
-  // title?: string;
-  // subtitle?: string;
+  disableAutoWidthLimit?: boolean;
   innerStyle?: StyleProp<ViewStyle>;
 }
 
@@ -35,43 +32,34 @@ const Container: React.FC<IContainerProps> = ({
   style,
   children,
   noHeader,
+  disableAutoWidthLimit,
   edges = noHeader ? ['left', 'right', 'top'] : ['left', 'right'],
   ...props
 }) => {
-  // const { themeContext, set } = useDefaultContext();
-
   const { colors } = useTheme();
+  const { isPhone, breakpoint } = useBreakpoint();
 
-  // const defTitle = useNavigationState(({ routeNames, index }) => t(`${routeNames[index].toLowerCase()}.title`));
+  const calcStyles: StyleProp<ViewStyle> = useMemo(
+    () => ({
+      backgroundColor: colors.background,
+      maxWidth: disableAutoWidthLimit || isPhone ? undefined : breakpoint.width,
+    }),
+    [breakpoint.width, colors.background, isPhone, disableAutoWidthLimit],
+  );
 
-  /* {!noHeader && (
-    <Appbar.Header>
-      {leftHeaderContent}
-      <Appbar.Content title={title || defTitle} subtitle={subtitle} />
-      {tightHeaderContent}
-    </Appbar.Header>
-  )} */
   return (
-    <SafeAreaView
-      edges={edges}
-      style={[
-        styles.container,
-        {
-          backgroundColor: colors.background,
-        },
-        style,
-      ]}
-      {...props}
-    >
-      <ScrollView
-        style={[styles.scroll, style]}
-        contentContainerStyle={styles.scrollInner}
-        showsVerticalScrollIndicator={false}
-        {...props}
-      >
-        {children}
-      </ScrollView>
-    </SafeAreaView>
+    <View style={styles.cover}>
+      <SafeAreaView edges={edges} style={[styles.safeArea, calcStyles, style]} {...props}>
+        <ScrollView
+          style={[styles.scroll, style]}
+          contentContainerStyle={styles.scrollInner}
+          showsVerticalScrollIndicator={false}
+          {...props}
+        >
+          {children}
+        </ScrollView>
+      </SafeAreaView>
+    </View>
   );
 };
 

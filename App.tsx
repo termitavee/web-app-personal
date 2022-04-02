@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import React, { Suspense } from 'react';
 import { Text } from 'react-native';
 

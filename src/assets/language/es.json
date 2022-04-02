@@ -106,5 +106,10 @@
     "linkToSource": "Enlace al <1>código fuente</1>"
   },
   "addToClipboard": "Pulsa aquí para copiar, en caso de que el botón no funcione",
-  "addedToClipboard": "Copiado"
+  "addedToClipboard": "Copiado",
+  "accessibility": {
+    "linkedinButtonHint": "Navegar a mi linkedin",
+    "githubButtonHint": "Navegar a mi  Github",
+    "emailButtonHint": "intentar abrir o copiar mi email"
+  }
 }

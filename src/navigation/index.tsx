@@ -1,15 +1,16 @@
-import { NavigationContainer } from '@react-navigation/native';
+import { LinkingOptions, NavigationContainer } from '@react-navigation/native';
 import { ThemeProvider } from '@shopify/restyle';
 import React from 'react';
 import { Appearance, ColorSchemeName } from 'react-native';
 import { ToastProvider } from 'react-native-toast-notifications';
 
-import { darkTheme, lightTheme } from 'src/assets/themes';
 import { ContextProvider } from 'src/hooks/use-context';
 import { initialWindowMetrics, SafeAreaProvider } from 'src/hooks/use-safe-area';
+import { LinkingType, Routes } from 'src/types/navigation';
+import { darkTheme, lightTheme } from 'src/utils/themes';
 import { UseIsInit } from 'src/utils/translations';
 
-import Navigation from './tab-navigation';
+import MainNavigation from './main-navigation';
 
 const App: React.FC = () => {
   const [themeContext, setTheme] = React.useState<ColorSchemeName>(Appearance.getColorScheme());
@@ -26,6 +27,19 @@ const App: React.FC = () => {
   React.useEffect(() => {
     if (isI19nInitialized) setLoaded(true);
   }, [isI19nInitialized]);
+
+  const linking: LinkingOptions<LinkingType> = {
+    prefixes: ['https://jrdominguez.dev/'],
+    config: {
+      screens: {
+        [Routes.Home]: 'Home',
+        [Routes.Experience]: 'Experience',
+        [Routes.Contact]: 'Contact',
+        [Routes.Settings]: 'Settings',
+      },
+    },
+  };
+
   // linking={linking} ref={navigationRef}
   return (
     <ThemeProvider theme={currentTheme}>
@@ -33,8 +47,8 @@ const App: React.FC = () => {
         <SafeAreaProvider initialMetrics={initialWindowMetrics}>
           <ToastProvider>
             {loaded && (
-              <NavigationContainer theme={currentTheme}>
-                <Navigation />
+              <NavigationContainer linking={linking} theme={currentTheme}>
+                <MainNavigation />
               </NavigationContainer>
             )}
           </ToastProvider>
