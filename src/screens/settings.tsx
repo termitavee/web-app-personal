@@ -46,6 +46,8 @@ const Settings: React.FC<SettingsScreenPropType> = () => {
     void DeviceUtils.openUrl('https://github.com/termitavee/web-app-personal');
   };
 
+  const onPressSource = () => DeviceUtils.openUrl('https://github.com/termitavee/web-app-personal');
+
   return (
     <Container noHeader>
       <Text variant="title">{t('settings.description')}</Text>
